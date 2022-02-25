@@ -11,9 +11,10 @@ namespace LogoKaresz
 {
     partial class Form1
     {
-        void Köszön()
+        void koszon()
         {
-            MessageBox.Show("halihó");
+            MessageBox.Show("Hey!");
         }
+
     }
 }
