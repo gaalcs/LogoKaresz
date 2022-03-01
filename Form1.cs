@@ -11,6 +11,7 @@ namespace LogoKaresz
 		{		
 			MessageBox.Show("Hello");
 			Köszön();
+			Elköszön();
 		}
 	}
 }

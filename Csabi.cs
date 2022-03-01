@@ -15,5 +15,10 @@ namespace LogoKaresz
         {
             MessageBox.Show("Szevasz Tavasz!!!");
         }
+
+        void Elköszön()
+        {
+            MessageBox.Show("Viszlát!");
+        }
     }
 }
