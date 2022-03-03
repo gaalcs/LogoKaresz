@@ -16,5 +16,15 @@ namespace LogoKaresz
             Ív(360,meret);
         }
 
+        void Odatolt(double szog, double hossz, Color szin)
+        {
+            Tollat(fel);
+            Jobbra(szog);
+            Előre(hossz);
+            Tölt(szin);
+            Hátra(hossz);
+            Balra(szog);
+            Tollat(le);
+        }
     }
 }
