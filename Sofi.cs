@@ -67,5 +67,59 @@ namespace LogoKaresz
             Balra(90);
             Odatolt(0,meret/2,szin_kozep);
         }
+
+        void virag_nagy(double meret, Color szin_szirom, Color szin_kozep,  Color szin_background)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                Tollat(fel);
+                Előre(meret);
+                Tollat(le);
+
+                kor(meret/2, szin_szirom);
+
+                Tollat(fel);
+                Hátra(meret);
+                Tollat(le);
+
+                Jobbra(45);
+            }
+
+            //background szin
+
+            Tollat(fel);
+            Balra(90);
+            Előre(meret);
+            Jobbra(90);
+            Tollat(le);
+
+            kor(meret, szin_background);
+
+            Tollszín(szin_background);
+            Jobbra(90);
+            Előre(meret);
+            Balra(90);
+            Odatolt(0, meret / 2, szin_background);
+            Odatolt(0,meret*0.75,szin_background);
+
+            //masodik belso kor
+
+            Tollat(fel);
+            Balra(90);
+            Előre(meret*0.60);
+            Jobbra(90);
+            Tollat(le);
+
+            kor(meret*0.60, szin_kozep);
+
+            Tollszín(szin_kozep);
+            Jobbra(90);
+            Előre(meret*0.60);
+            Balra(90);
+            Odatolt(0, meret/8, szin_kozep);
+            //Odatolt(0, meret / 3, szin_background);
+
+
+        }
     }
 }
