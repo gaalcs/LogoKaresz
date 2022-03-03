@@ -39,16 +39,33 @@ namespace LogoKaresz
             
             for (int i = 0; i < 6; i++)
             {
-                Tollszín(szin_szirom);
-                Előre(meret/5);
-                kor(meret / 3, szin_szirom);
-                Tollszín(szin_szirom);
-                Hátra(meret/5);
-                Jobbra(60);
-                
-            }   
-            Tollszín(Color.Black);                    
+                Tollat(fel);
+                Előre(meret/2);
+                Tollat(le);
+                   
+                kor(meret / 2, szin_szirom);
 
+                Tollat(fel);
+                Hátra(meret/2);
+                Tollat(le);
+
+                Jobbra(60);
+            }
+
+
+            Tollat(fel);
+            Balra(90);
+            Előre(meret * 0.60);
+            Jobbra(90);
+            Tollat(le);
+
+            kor(meret*0.60,szin_kozep);
+
+            Tollszín(szin_kozep);
+            Jobbra(90);
+            Előre(meret*0.60);
+            Balra(90);
+            Odatolt(0,meret/2,szin_kozep);
         }
     }
 }
