@@ -11,9 +11,9 @@ namespace LogoKaresz
 {
     partial class Form1
     {
-        void koszon()
+        void kor(double meret)
         {
-            MessageBox.Show("Hey!");
+            Ív(360,meret);
         }
 
     }
