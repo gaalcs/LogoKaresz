@@ -5,17 +5,19 @@ using System.Windows.Forms;
 
 namespace LogoKaresz
 {
-	public partial class Form1 : Form
-	{
-		/* Függvények */
+    public partial class Form1 : Form
+    {
+        /* Függvények */
 
 
-		/* Függvények vége */
-		void FELADAT()
-		{
-			/* Ezt indítja a START gomb! */
-			// Teleport(közép.X, közép.Y+150, észak);
-			vaza_szele_jobbra(1);
-		}
-	}
+        /* Függvények vége */
+        void FELADAT()
+        {
+            /* Ezt indítja a START gomb! */
+            // Teleport(közép.X, közép.Y+150, észak);
+            //Jobbra
+            //Bezier();
+           
+        }
+    }
 }

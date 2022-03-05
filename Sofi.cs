@@ -122,8 +122,9 @@ namespace LogoKaresz
         /// a vaza feher szele, merettel szorzod az alap (300-as) meretet
         /// </summary>
         /// <param name="meret"> ennyivel osztod az alap (300-as) meretet</param>
-        void vaza_szele_balra(double meret)
+        void vaza_szele_balra(double meret, Color szin)
         {
+            Tollszín(szin);
             Bezier(0, 45*meret, 210*meret, 0, 300*meret);
             Balra(90+45*meret);
             Előre(300*meret/6);
@@ -132,10 +133,12 @@ namespace LogoKaresz
             Balra(90-45*meret);
             Előre(300*meret/6);
             Balra(90);
-
+            Odatolt(-75, meret * 10, szin);
+            Tollszín(Color.Black);
         }
-        void vaza_szele_jobbra(double meret)
+        void vaza_szele_jobbra(double meret, Color szin)
         {
+            Tollszín(szin);
             Bezier(0, -45*meret, 210*meret, 0, 300*meret);
             Jobbra(90+45*meret);
             Előre(300*meret/6);
@@ -144,7 +147,8 @@ namespace LogoKaresz
             Jobbra(90-45*meret);
             Előre(300*meret/6);
             Jobbra(90);
-
+            Odatolt(75,meret*10,szin);
+            Tollszín(Color.Black);
         }
     }
 }
