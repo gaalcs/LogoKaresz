@@ -58,10 +58,26 @@ namespace LogoKaresz
         static void Tölt(Avatar a, Color c, bool beszólós = true) => a.Tölt(c, beszólós);
         static void Ív(Avatar a, (double , double ) fr) => a.Ív(fr.Item1, fr.Item2);
         static void Ív(Avatar a, double f, double r) => a.Ív(f, r);
+        /// <summary>
+        /// Karesz egy másodrendű Bezier-görbét követve mozog. 
+        /// </summary>
+        /// <param name="ilyen_erővel_indul"></param>
+        /// <param name="erre_néz_érkezéskor"></param>
+        /// <param name="ilyen_erővel_érkezik"></param>
+        /// <param name="az_érkezési_pont_jelenleg_ilyen_irányban_van"></param>
+        /// <param name="az_érkezési_pont_ilyen_messze_van"></param>
+        public void Bezier(double ilyen_erővel_indul,
+                        double erre_néz_érkezéskor,
+                        double ilyen_erővel_érkezik,
+                        double az_érkezési_pont_jelenleg_ilyen_irányban_van,
+                        double az_érkezési_pont_ilyen_messze_van,
+                        bool kontrolpont = false,
+                        bool kontrolszakasz = false
+                        ) => defaultkaresz.Bezier(ilyen_erővel_indul, erre_néz_érkezéskor, ilyen_erővel_érkezik, az_érkezési_pont_jelenleg_ilyen_irányban_van, az_érkezési_pont_ilyen_messze_van, kontrolpont, kontrolszakasz);
         #endregion
 
         #region deOOP-függvények (formmetódusváltozatok)
-        
+
         bool Kilépek_e_a_pályáról(double d) => defaultkaresz.Kilépek_e_a_pályáról(d);
         void Előre(double d) => defaultkaresz.Előre(d);
         void Hátra(double d) => defaultkaresz.Hátra(d);

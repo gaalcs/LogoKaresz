@@ -11,6 +11,7 @@ namespace LogoKaresz
 {
     partial class Form1
     {
+        #region Szele
         #region Szele balra
         void Szele_hor_bal(double meret, int db, Color szin1, Color szin2, Color szin3)
         {
@@ -616,5 +617,43 @@ namespace LogoKaresz
 
             Szele_hor_jobb(meret, (db1-2) / 2, szin1, szin2, szin3);
         }
+        #endregion
+
+        #region Szivecske
+        void Szivecske(double meret, Color szin)
+        {
+            #region teteje
+            Bezier(meret * 6/10, 150, meret * 6/10, 75, meret);
+            Balra(120);
+            Bezier(meret * 6/10, 180, meret * 6/10, 75, meret);
+            Balra(20);
+            #endregion
+
+            #region alja
+            for (int i = 0; i < 20; i++)
+            {
+                Előre(meret / 10);
+                Jobbra(2);
+            }
+            Jobbra(81);
+            for (int i = 0; i < 20; i++)
+            {
+                Előre(meret / 10);
+                Jobbra(2);
+            }
+            Előre(meret / 30);
+            #endregion
+
+            #region szinez
+            Tollat(fel);
+            Jobbra(99);
+            Előre(meret);
+            Tölt(szin);
+            Hátra(meret);
+            Balra(90);
+            Tollat(le);
+            #endregion
+        }
+        #endregion
     }
 }

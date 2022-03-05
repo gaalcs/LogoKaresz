@@ -228,7 +228,7 @@ namespace LogoKaresz
 			}
 
 }
-private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem jó sajnos, stack overflow :(
+		private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem jó sajnos, stack overflow :(
 		{
 			if (szülőform.rajzlap.GetPixel(x, y) == mit &&
 				0 <= x && x < szülőform.rajzlap.Width &&
@@ -292,6 +292,68 @@ private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem j�
 		}
 
 		//		private void Bezier()
+
+		void Kontrolpont(Pont p, Color szin, float w = 10, float h = 10)
+		{
+			gr.FillEllipse(new SolidBrush(szin), (float)p.X - w / 2, (float)p.Y - h / 2, w, h);
+		}
+
+		void Kontrolszakasz(Pont p, Pont q, Color szin)
+		{
+			gr.DrawLine(new Pen(szin), p.ToPoint(), q.ToPoint());
+		}
+
+
+		/// <summary>
+		/// Karesz egy másodrendű Bezier-görbét követve mozog. 
+		/// A négy kontrolpont:
+		/// 1. Ahol Karesz van
+		/// 2. Polárkoordinátával: Amerre karesz néz + 1. paraméter
+		/// 3. A 4. kontrolpontból kivonva a 2-3. paraméterekkel megadott polárkoordinátás vektor.
+		/// 4. 4-5. paraméterek által megadott pont polárkoordinátás felírással.
+		/// </summary>
+		/// <param name="ilyen_erővel_indul"></param>
+		/// <param name="erre_néz_érkezéskor"></param>
+		/// <param name="ilyen_erővel_érkezik"></param>
+		/// <param name="az_érkezési_pont_jelenleg_ilyen_irányban_van"></param>
+		/// <param name="az_érkezési_pont_ilyen_messze_van"></param>
+		public void Bezier(double ilyen_erővel_indul,
+						double erre_néz_érkezéskor,
+						double ilyen_erővel_érkezik,
+						double az_érkezési_pont_jelenleg_ilyen_irányban_van,
+						double az_érkezési_pont_ilyen_messze_van,
+						bool kontrolpont = false,
+						bool kontrolszakasz = false
+						)
+		{
+			Pont hollesz = hely - new Pont(irány + az_érkezési_pont_jelenleg_ilyen_irányban_van, az_érkezési_pont_ilyen_messze_van, "polár");
+
+			if (hollesz.DescartesBenneVan(szülőform.rajzlap))
+			{
+				Pont cp1 = hely - new Pont(irány, ilyen_erővel_indul, "polár");
+				Pont cp2 = hollesz - new Pont(270 + erre_néz_érkezéskor, ilyen_erővel_érkezik, "polár");
+				if (rajzole)
+				{
+					gr.DrawBezier(toll, hely.ToPoint(), cp1.ToPoint(), cp2.ToPoint(), hollesz.ToPoint());
+				}
+				if (kontrolszakasz)
+				{
+					Kontrolszakasz(hely, cp1, Color.FromArgb(64, 0, 0, 255));
+					Kontrolszakasz(cp2, hollesz, Color.FromArgb(64, 0, 0, 255));
+				}
+				if (kontrolpont)
+				{
+					Kontrolpont(cp1, Color.LightGreen);
+					Kontrolpont(cp2, Color.Red);
+				}
+				hely = hollesz;
+				irány += erre_néz_érkezéskor;
+				Thread.Sleep(varakozas);
+				Frissít();
+			}
+			else
+				MessageBox.Show("Az érkezési pont a pályán kívül helyezkedne el!");
+		}
 
 		private void Frissít()
 		{
