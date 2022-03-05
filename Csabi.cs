@@ -12,17 +12,26 @@ namespace LogoKaresz
     partial class Form1
     {
         #region Szele
-        #region Szele balra
         void Szele_hor_bal(double meret, int db, Color szin1, Color szin2, Color szin3)
         {
             for (int j = 0; j < db; j++)
             {
                 #region korvonal
-                for (int i = 0; i < 4; i++)
+                Tollszín(szin1);
+                Előre(meret * 8.68 / 10);
+                Tollszín(Color.Black);
+                Előre(meret * 1.32 / 10);
+                Balra(90);
+                for (int i = 0; i < 2; i++)
                 {
                     Előre(meret);
                     Balra(90);
                 }
+                Előre(meret * 8.68 / 10);
+                Tollszín(szin1);
+                Előre(meret * 1.32 / 10);
+                Tollszín(Color.Black);
+                Balra(90);
                 #endregion
 
                 #region helyezkedes a korre
@@ -117,20 +126,34 @@ namespace LogoKaresz
             for (int j = 0; j < db; j++)
             {
                 #region korvonal
+                if (db != j+1)
+                {
+                    Tollszín(szin1);
+                    Előre(meret);
+                    Tollszín(Color.Black);
+                    Balra(90);
+                }
+                else
+                {
+                    Előre(meret);
+                    Balra(90);
+                }
                 if (db == 1)
                 {
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < 2; i++)
                     {
                         Előre(meret);
                         Balra(90);
                     }
                     Előre(meret * 8.68 / 10);
+                    Tollszín(szin1);
                     Előre(meret * 1.32 / 10);
+                    Tollszín(Color.Black);
                     Balra(90);
                 }
                 if (db == j+1)
                 {
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < 2; i++)
                     {
                         Előre(meret);
                         Balra(90);
@@ -143,8 +166,6 @@ namespace LogoKaresz
                 }
                 else
                 {
-                    Előre(meret);
-                    Balra(90);
                     Tollat(fel);
                     Előre(meret * 1.32/10);
                     Tollat(le);
@@ -155,7 +176,9 @@ namespace LogoKaresz
                     Előre(meret * 8.68 / 10);
                     if (j == 0)
                     {
+                        Tollszín(szin1);
                         Előre(meret * 1.32 / 10);
+                        Tollszín(Color.Black);
                     }
                     else
                     {
@@ -289,19 +312,27 @@ namespace LogoKaresz
                 #endregion
             }
         }
-        #endregion
 
-        #region Szele jobbra
         void Szele_hor_jobb(double meret, int db, Color szin1, Color szin2, Color szin3)
         {
-            for (int i = 0; i < db; i++)
+            for (int j = 0; j < db; j++)
             {
                 #region korvonal
-                for (int j = 0; j < 4; j++)
+                Tollszín(szin1);
+                Előre(meret * 8.68 / 10);
+                Tollszín(Color.Black);
+                Előre(meret * 1.32 / 10);
+                Jobbra(90);
+                for (int i = 0; i < 2; i++)
                 {
                     Előre(meret);
                     Jobbra(90);
                 }
+                Előre(meret * 8.68/10);
+                Tollszín(szin1);
+                Előre(meret * 1.32/10);
+                Tollszín(Color.Black);
+                Jobbra(90);
                 #endregion
 
                 #region helyezkedes a korre
@@ -398,20 +429,34 @@ namespace LogoKaresz
             for (int j = 0; j < db; j++)
             {
                 #region korvonal
+                if (db != j + 1)
+                {
+                    Tollszín(szin1);
+                    Előre(meret);
+                    Tollszín(Color.Black);
+                    Jobbra(90);
+                }
+                else
+                {
+                    Előre(meret);
+                    Jobbra(90);
+                }
                 if (db == 1)
                 {
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < 2; i++)
                     {
                         Előre(meret);
                         Jobbra(90);
                     }
                     Előre(meret * 8.68 / 10);
+                    Tollszín(szin1);
                     Előre(meret * 1.32 / 10);
+                    Tollszín(Color.Black);
                     Jobbra(90);
                 }
                 if (db == j+1)
                 {
-                    for (int i = 0; i < 3; i++)
+                    for (int i = 0; i < 2; i++)
                     {
                         Előre(meret);
                         Jobbra(90);
@@ -424,8 +469,6 @@ namespace LogoKaresz
                 }
                 else
                 {
-                    Előre(meret);
-                    Jobbra(90);
                     Tollat(fel);
                     Előre(meret * 1.32 / 10);
                     Tollat(le);
@@ -436,7 +479,9 @@ namespace LogoKaresz
                     Előre(meret * 8.68 / 10);
                     if (j == 0)
                     {
+                        Tollszín(szin1);
                         Előre(meret * 1.32 / 10);
+                        Tollszín(Color.Black);
                     }
                     else
                     {
@@ -578,7 +623,8 @@ namespace LogoKaresz
                 #endregion
             }
         }
-        #endregion
+
+//--------------------------------------------------------------------------------------------------------
 
         void Szele_korbe(double meret, int db1, int db2, Color szin1, Color szin2, Color szin3)
         {
@@ -619,10 +665,10 @@ namespace LogoKaresz
         }
         #endregion
 
-        #region Szivecske
         void Szivecske(double meret, Color szin)
         {
             #region teteje
+            Tollszín(szin);
             Bezier(meret * 6/10, 150, meret * 6/10, 75, meret);
             Balra(120);
             Bezier(meret * 6/10, 180, meret * 6/10, 75, meret);
@@ -652,8 +698,46 @@ namespace LogoKaresz
             Hátra(meret);
             Balra(90);
             Tollat(le);
+            Tollszín(Color.Black);
             #endregion
         }
-        #endregion
+
+        void Csontalak(double meret, Color szin)
+        {
+            #region csont
+            Tollszín(szin);
+            Jobbra(10);
+            for (int k = 0; k < 2; k++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    for (int i = 0; i < 40; i++)
+                    {
+                        Előre(meret / 160);
+                        Jobbra(1);
+                    }
+                    Balra(100);
+                }
+                Jobbra(220);
+                for (int i = 0; i < 40; i++)
+                {
+                    Előre(meret / 40);
+                    Balra(1);
+                }
+                Jobbra(120);
+            }
+            #endregion
+
+            #region szinez
+            Tollat(fel);
+            Jobbra(30);
+            Előre(meret / 4);
+            Tölt(szin);
+            Hátra(meret / 4);
+            Balra(30);
+            Tollat(le);
+            Tollszín(Color.Black);
+            #endregion
+        }
     }
 }

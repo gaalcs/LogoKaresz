@@ -11,10 +11,14 @@ namespace LogoKaresz
 		{
 			//Szele_korbe(40, 8, 8, Color.DarkOrange, Color.Black, Color.White);
 
+			/*/* /
 			Tollat(fel);
 			Előre(260);
 			Tollat(le);
-			Szivecske(10, Color.Green);
+			Szivecske(100, Color.Green);
+			/**/
+
+			//Csontalak(100, Color.BurlyWood);
 		}
 	}
 }
