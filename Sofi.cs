@@ -150,5 +150,38 @@ namespace LogoKaresz
             Odatolt(75,meret*10,szin);
             Tollszín(Color.Black);
         }
+        /// <summary>
+        /// a meret azt hatarozza meg hogy az alap meretet mennyivel szorzod meg.
+        /// </summary>
+        /// <param name="meret"></param>
+        /// <param name="szin_kulso"></param>
+        /// <param name="szin_belső"></param>
+        void tolcser_virag_baloldali(double meret,Color szin_kulso,Color szin_belső)
+        {
+            #region a virag bal kulso szirma
+            Tollszín(szin_kulso);
+            Balra((90 + 45)*meret);
+            Bezier(90*meret, 90*meret, -70*meret, 75*meret, 200*meret);
+            //vissza megy a kezdő pontba & megrajzolja a belso ivet is
+            Tollat(fel);
+            Balra(15*meret);
+            Hátra(200*meret);
+            Jobbra(15*meret);
+            Előre(20*meret);
+            Jobbra(45*meret); 
+            Tollat(le);
+            Balra((90 + 45)*meret);
+            Bezier(70*meret, 70*meret, -85*meret, 73*meret, 180*meret);
+            // vissza a kezdőpontba
+            Tollat(fel);
+            Jobbra(5);           
+            Hátra(200 * meret);
+            Jobbra(15 * meret);
+            Jobbra(45 * meret);
+            Tollat(le);
+            
+            #endregion
+
+        }
     }
 }
