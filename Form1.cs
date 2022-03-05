@@ -9,8 +9,7 @@ namespace LogoKaresz
 	{
 		void FELADAT()
 		{
-			//Szele_vert(100, 3, Color.DarkOrange, Color.Black, Color.White);
-			Szele_korbe(30, 4, 4, Color.DarkOrange, Color.Black, Color.White);
+			Szele_korbe(40, 8, 8, Color.DarkOrange, Color.Black, Color.White);
 		}
 	}
 }
