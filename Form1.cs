@@ -15,7 +15,7 @@ namespace LogoKaresz
 		{
 			/* Ezt indítja a START gomb! */
 			// Teleport(közép.X, közép.Y+150, észak);
-			virag_nagy(70, Color.Red, Color.Yellow, Color.Green);
+			vaza_szele_jobbra(1);
 		}
 	}
 }

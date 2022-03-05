@@ -116,9 +116,34 @@ namespace LogoKaresz
             Jobbra(90);
             Előre(meret*0.60);
             Balra(90);
-            Odatolt(0, meret/8, szin_kozep);
-            //Odatolt(0, meret / 3, szin_background);
+            Odatolt(0, meret/8, szin_kozep);            
+        }
+        /// <summary>
+        /// a vaza feher szele, merettel szorzod az alap (300-as) meretet
+        /// </summary>
+        /// <param name="meret"> ennyivel osztod az alap (300-as) meretet</param>
+        void vaza_szele_balra(double meret)
+        {
+            Bezier(0, 45*meret, 210*meret, 0, 300*meret);
+            Balra(90+45*meret);
+            Előre(300*meret/6);
+            Balra(90);
+            Bezier(0, -45*meret, -210*meret, 0, 300*meret);
+            Balra(90-45*meret);
+            Előre(300*meret/6);
+            Balra(90);
 
+        }
+        void vaza_szele_jobbra(double meret)
+        {
+            Bezier(0, -45*meret, 210*meret, 0, 300*meret);
+            Jobbra(90+45*meret);
+            Előre(300*meret/6);
+            Jobbra(90);
+            Bezier(0, 45*meret, -210*meret, 0, 300*meret);
+            Jobbra(90-45*meret);
+            Előre(300*meret/6);
+            Jobbra(90);
 
         }
     }
