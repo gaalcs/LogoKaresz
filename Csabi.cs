@@ -665,7 +665,8 @@ namespace LogoKaresz
         }
         #endregion
 
-        void Szivecske(double meret, Color szin)
+        #region Szivecske
+        void Szivecske_fel(double meret, Color szin)
         {
             #region teteje
             Tollszín(szin);
@@ -676,23 +677,14 @@ namespace LogoKaresz
             #endregion
 
             #region alja
-            for (int i = 0; i < 20; i++)
-            {
-                Előre(meret / 10);
-                Jobbra(2);
-            }
-            Jobbra(81);
-            for (int i = 0; i < 20; i++)
-            {
-                Előre(meret / 10);
-                Jobbra(2);
-            }
-            Előre(meret / 30);
+            Ív(40, meret * 2.83);
+            Jobbra(80);
+            Ív(40, meret * 2.83);
             #endregion
 
             #region szinez
             Tollat(fel);
-            Jobbra(99);
+            Jobbra(100);
             Előre(meret);
             Tölt(szin);
             Hátra(meret);
@@ -701,6 +693,37 @@ namespace LogoKaresz
             Tollszín(Color.Black);
             #endregion
         }
+
+        void Szivecske_le(double meret, Color szin)
+        {
+            #region teteje
+            Jobbra(180);
+            Tollszín(szin);
+            Bezier(meret * 6 / 10, -30, meret * 6 / 10, 75, meret);
+            Jobbra(60);
+            Bezier(meret * 6 / 10, 0, meret * 6 / 10, 75, meret);
+            Balra(180);
+            Balra(20);
+            #endregion
+
+            #region alja
+            Ív(40, meret * 2.83);
+            Jobbra(80);
+            Ív(40, meret * 2.83);
+            #endregion
+
+            #region szinez
+            Tollat(fel);
+            Jobbra(100);
+            Előre(meret);
+            Tölt(szin);
+            Hátra(meret);
+            Balra(90);
+            Tollat(le);
+            Tollszín(Color.Black);
+            #endregion
+        }
+        #endregion
 
         void Csontalak(double meret, Color szin)
         {
@@ -739,5 +762,88 @@ namespace LogoKaresz
             Tollszín(Color.Black);
             #endregion
         }
+
+        void Lohere(double meret, Color szin)
+        {
+            #region lohere            
+            int fok = 135;
+            Tollszín(szin);
+            for (int i = 1; i < 9; i++)
+            {
+                Bezier(meret * 5.5 / 10, fok, meret * 5.5 / 10, 67.5, meret);
+                Balra((i - 1) * 45);
+                Balra(90);
+                fok += 45;
+            }
+            Tollszín(Color.Black);
+            #endregion
+
+            #region szinez
+            Tollat(fel);
+            Jobbra(90);
+            Előre(meret);
+            Tölt(szin);
+            Hátra(meret);
+            Balra(90);
+            Tollat(le);
+            #endregion
+        }
+
+        void Mak_kozepe(double meret, Color szin1, Color szin2)
+        {
+            #region szivecske_le
+            Tollat(fel);
+            Előre(258.5);
+            Jobbra(90);
+            Előre(1.5);
+            Balra(90);
+            Tollat(le);
+            Szivecske_le(30, szin1);
+            #endregion
+
+            #region csontalak
+            Tollat(fel);
+            Előre(meret * 3/10);
+            Balra(90);
+            Előre(meret * 1/10);
+            Jobbra(90);
+            Tollat(le);
+            Csontalak(78.5, szin2);
+            #endregion
+
+            #region lohere
+            Tollat(fel);
+            Balra(10);
+            Előre(meret * 5.2/10);
+            Jobbra(90);
+            Előre(meret * 5.7/10);
+            Jobbra(90);
+            Tollat(le);
+            Lohere(20, szin1);
+            #endregion
+
+            #region csontalak2
+            Tollat(fel);
+            Jobbra(180);
+            Előre(meret * 5.7/10);
+            Jobbra(90);
+            Hátra(meret * 5.7/10);
+            Balra(90);
+            Tollat(le);
+            Csontalak(78.5, szin2);
+            #endregion
+
+            #region szivecske_fel
+            Tollat(fel);
+            Balra(10);
+            Előre(meret * 6.15/10);
+            Jobbra(90);
+            Előre(meret * 6.705/10);
+            Jobbra(90);            
+            Tollat(le);
+            Szivecske_fel(30, szin1);
+            #endregion
+        }
     }
 }
+
