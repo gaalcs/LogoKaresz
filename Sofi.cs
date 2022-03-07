@@ -243,6 +243,92 @@ namespace LogoKaresz
             kor(10,kor_szin);
             
         }
+        void tolcser_virag_jobboldali(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
+        {
+            #region a virag bal kulso szirma
 
+            Jobbra((90 + 45));
+            Bezier(meret * 4.5 / 10, 90, meret * 3.5 / 10, -75, meret);
+            //vissza megy a kezdő pontba & megrajzolja a belso ivet is
+            Tollat(fel);
+            Jobbra(15);
+            Előre(meret);
+            Balra(15);
+            Hátra(meret / 10);
+            Balra(90);
+            Tollat(le);
+
+            Bezier(meret * 3.5 / 10, 90, meret * 4.25 / 10, -73, meret - meret / 10);
+            // vissza a kezdőpontba
+            Tollat(fel);
+            Jobbra(15);
+            Előre(meret);
+            Jobbra(5);
+            Jobbra(70);
+
+            #endregion
+
+            //!!! nem mukodik jol
+            #region bal kulso szirom
+            Jobbra(45);
+            Bezier(meret * 4.5 / 10, 0, meret * 3.5 / 10, -75, meret);
+            Tollat(fel);
+            Balra(75);
+            Hátra(meret);
+            Balra(15);
+            Előre(meret / 10);
+            Tollat(le);
+            Jobbra(90);
+            Bezier(meret * 3.5 / 10, 20, meret * 4.25 / 10, -73, meret - meret / 10);
+            // vissza a kezdőpontba
+            Tollat(fel);
+            Balra(95);
+            Hátra(meret);
+            Jobbra(15 * 2);
+
+            Tollat(le);
+
+            #endregion
+
+
+            Odatolt(0, meret / 10, szin_kulso);
+
+            #region belso resz
+
+            Tollszín(szin_belso);
+            Tollat(fel);
+            Balra(45);
+            Előre(meret / 7);
+            Balra(90);
+            Tollat(le);
+
+            Bezier(meret * 2 / 10, 90, meret * -2.5 / 10, 80, meret - meret / 7);
+
+            //hatra
+            Tollat(fel);
+            Balra(10);
+            Hátra(meret - meret / 7);
+            Jobbra(10);
+            Tollat(le);
+
+            //masik oldal
+            Jobbra(90);
+            Bezier(meret * 2 / 10, 0, meret * 2.5 / 10, -80, meret - meret / 7);
+
+            Balra(180);
+            Bezier(meret * 1.5 / 10, -45, 0, -35, (meret - meret / 8) / 5);
+
+            Jobbra(100);
+            Bezier(meret * 1.5 / 10, -90, 0, -22, (meret - meret / 10) / 5);
+            #endregion
+
+            Odatolt(-80, meret / 3, szin_belso);
+            Tollat(fel);
+            Hátra(meret / 5);
+            Tollat(le);
+
+            kor(10, kor_szin);
+
+        }
     }
 }
