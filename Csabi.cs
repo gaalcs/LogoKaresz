@@ -789,16 +789,19 @@ namespace LogoKaresz
             #endregion
         }
 
-        void Mak_kozepe(double meret, Color szin1, Color szin2)
+        void Mak_kozepe(double meret, Color szin1, Color szin2, Color szin3)
         {
-            #region szivecske_le
+            #region helyezkedes
             Tollat(fel);
-            Előre(258.5);
+            Előre(meret * 258.5/100);
             Jobbra(90);
-            Előre(1.5);
+            Előre(meret * 1.5/100);
             Balra(90);
             Tollat(le);
-            Szivecske_le(30, szin1);
+            #endregion
+
+            #region szivecske_le
+            Szivecske_le(meret * 30/100, szin1);
             #endregion
 
             #region csontalak
@@ -808,7 +811,7 @@ namespace LogoKaresz
             Előre(meret * 1/10);
             Jobbra(90);
             Tollat(le);
-            Csontalak(78.5, szin2);
+            Csontalak(meret * 78.5/100, szin2);
             #endregion
 
             #region lohere
@@ -819,7 +822,7 @@ namespace LogoKaresz
             Előre(meret * 5.7/10);
             Jobbra(90);
             Tollat(le);
-            Lohere(20, szin1);
+            Lohere(meret * 20/100, szin1);
             #endregion
 
             #region csontalak2
@@ -830,7 +833,7 @@ namespace LogoKaresz
             Hátra(meret * 5.7/10);
             Balra(90);
             Tollat(le);
-            Csontalak(78.5, szin2);
+            Csontalak(meret * 78.5/100, szin2);
             #endregion
 
             #region szivecske_fel
@@ -841,9 +844,319 @@ namespace LogoKaresz
             Előre(meret * 6.705/10);
             Jobbra(90);            
             Tollat(le);
-            Szivecske_fel(30, szin1);
+            Szivecske_fel(meret * 30/100, szin1);
+            #endregion
+
+            #region helyezkedes2
+            Tollat(fel);
+            Hátra(meret * 64/100);
+            Jobbra(90);
+            Előre(meret * 29/100);
+            Balra(90);
+            Tollat(le);
+            #endregion
+
+            #region vonal
+            int fok = 80;
+            Balra(80);
+            Tollszín(szin3);
+            for (int i = 0; i < 2; i++)
+            {
+                Bezier(meret * 127/100, fok, meret * 127/100, 80, meret * 327/100);
+                Jobbra(100);
+                fok += 180;
+            }
+            Tollszín(Color.Black);
+            #endregion
+        }
+
+        void Mak(double meret, Color szin1, Color szin2, Color szin3, Color szin4)
+        {
+            Mak_kozepe(meret, szin1, szin2, szin3);
+
+            #region vonalak
+            #region helyezkedes
+            Tollat(fel);
+            Balra(190);
+            Előre(meret * 50/100);
+            Tollat(le);
+            #endregion
+
+            #region vonal2
+            int fok = 60;
+            Tollszín(szin3);
+            for (int i = 0; i < 2; i++)
+            {
+                Jobbra(30);
+                Bezier(meret * 135/100, fok, meret * 135/100, 60, meret * 327/100);
+                Tollat(fel);
+                Jobbra(90);
+                Előre(meret * 100/100);
+                Tollat(le);
+                fok += 180;
+            }
+            Tollszín(Color.Black);
+            #endregion
+
+            #region helyezkedes2
+            Tollat(fel);
+            Balra(180);
+            Előre(meret * 200/100);
+            Tollat(le);
+            Előre(meret * 40/100);
+            #endregion
+
+            #region volnal3
+            int fok2 = 80;
+            Tollszín(szin3);
+            for (int i = 1; i < 3; i++)
+            {
+                Jobbra(10);
+                Bezier(meret * 143/100, fok2, meret * 143/100, 80, meret * 327/100);
+                Tollat(fel);
+                Jobbra(90);
+                Tollat(le);
+                Jobbra((i-1) * 180);
+                Előre(meret * 40/100);
+                Tollat(fel);
+                Előre(meret * 100/100);
+                Tollat(le);
+                Előre(meret * 40 / 100);
+                fok2 += 180;
+            }
+            Tollszín(Color.Black);
+            #endregion
+            #endregion
+
+            #region szirmok
+            void Szinez()
+            {
+                Tollat(fel);
+                Balra(45);
+                Előre(meret * 30 / 100);
+                Tölt(szin2);
+                Hátra(meret * 30 / 100);
+                Jobbra(45);
+                Tollat(le);
+            }
+
+            #region szirmok
+            Tollszín(szin2);
+            Balra(61);
+            Bezier(meret * 40/100, 26, meret * 40/100, 90, meret * 69.5 / 100);
+            Balra(26);
+
+            Szinez();
+
+            Jobbra(30);
+            Bezier(meret * 45/100, 58, meret * 45/100, 90, meret * 69.5 / 100);
+            Balra(60);
+
+            Szinez();
+
+            Jobbra(25);
+            Bezier(meret * 50/100, 90, meret * 50/100, 90, meret * 69.5 / 100);
+            Balra(82);
+
+            Szinez();
+
+            Jobbra(9);
+            Bezier(meret * 50/100, 98, meret * 50/100, 90, meret * 69.5 / 100);
+            Balra(99);
+
+            Szinez();
+
+            Jobbra(20);
+            Bezier(meret * 45/100, 120, meret * 45/100, 90, meret * 69.5 / 100);
+            Balra(120);
+
+            Szinez();
+
+            Jobbra(32);
+            Bezier(meret * 40/100, 151, meret * 40/100, 90, meret * 69.5/100);
+            Balra(149);
+
+            Szinez();
+            Tollszín(Color.Black);
+            #endregion
+
+            #region helyezkedes3
+            Tollat(fel);
+            Jobbra(118);
+            Előre(meret * 180/100);
+            Előre(meret * 3/100);
+            Tollat(le);
+            #endregion
+
+            #region szirmok2
+            Tollszín(szin2);
+            Balra(61);
+            Bezier(meret * 40/100, 206, meret * 40/100, 90, meret * 69.5 / 100);
+            Balra(207);
+
+            Szinez();
+
+            Jobbra(33);
+            Bezier(meret * 45/100, 238, meret * 45/100, 90, meret * 69.5 / 100);
+            Balra(241);
+
+            Szinez();
+
+            Jobbra(23);
+            Bezier(meret * 50/100, 270, meret * 50/100, 90, meret * 69.5 / 100);
+            Balra(259);
+
+            Szinez();
+
+            Jobbra(7);
+            Bezier(meret * 50/100, 278, meret * 50/100, 90, meret * 69.5 / 100);
+            Balra(294);
+
+            Szinez();
+
+            Jobbra(36);
+            Bezier(meret * 45/100, 300, meret * 45/100, 90, meret * 69.5 / 100);
+            Balra(298);
+
+            Szinez();
+
+            Jobbra(29);
+            Bezier(meret * 40/100, 331, meret * 40/100, 90, meret * 69.5 / 100);
+            Balra(330);
+
+            Szinez();
+            Tollszín(Color.Black);
+            #endregion
+            #endregion
+
+            #region zold korok
+            void Szinez2()
+            {
+                Tollat(fel);
+                Jobbra(90);
+                Előre(meret * 9 / 100);
+                Tölt(szin1);
+                Hátra(meret * 9 / 100);
+                Balra(90);
+                Tollat(le);
+            }
+
+            void Kisebb_kor()
+            {
+                Tollszín(szin1);
+                Ív(360, meret * 18 / 100);
+                Tollszín(Color.Black);
+
+                Szinez2();
+            }
+
+            void Nagyobb_kor()
+            {
+                Tollszín(szin1);
+                Ív(360, meret * 21.5 / 100);
+                Tollszín(Color.Black);
+
+                Szinez2();
+            }
+
+            #region megy0
+            Tollat(fel);
+            Balra(151);
+            Előre(meret * 87/100);
+            Balra(90);
+            Előre(meret * 7/100);
+            Jobbra(90);
+            Tollat(le);
+            #endregion
+            Kisebb_kor();
+            #region megy
+            Tollat(fel);
+            Előre(meret * 78 / 100);
+            Jobbra(90);
+            Előre(meret * 10 / 100);
+            Balra(90);
+            Tollat(le);
+            #endregion
+            Nagyobb_kor();
+            #region megy
+            Tollat(fel);
+            Előre(meret * 78 / 100);
+            Balra(90);
+            Előre(meret * 11 / 100);
+            Jobbra(90);
+            Tollat(le);
+            #endregion
+            Kisebb_kor();
+            #region megy1
+            Tollat(fel);
+            Balra(90);
+            Előre(meret * 167/100);
+            Balra(90);
+            Tollat(le);
+            #endregion
+            Kisebb_kor();
+            #region megy
+            Tollat(fel);
+            Előre(meret * 78 / 100);
+            Jobbra(90);
+            Előre(meret * 10 / 100);
+            Balra(90);
+            Tollat(le);
+            #endregion
+            Nagyobb_kor();
+            #region megy
+            Tollat(fel);
+            Előre(meret * 78 / 100);
+            Balra(90);
+            Előre(meret * 10 / 100);
+            Jobbra(90);
+            Tollat(le);
+            #endregion
+            Kisebb_kor();
+            #endregion
+
+            #region korok kozt szinezes
+            void Szinez3()
+            {
+                Előre(meret * 39 / 100);
+                Balra(90);
+                Előre(meret * 30 / 100);
+                Tölt(szin4);
+                Hátra(meret * 30 / 100);
+                Jobbra(90);
+                Előre(meret * 39 / 100);
+                Balra(90);
+                Előre(meret * 10 / 100);
+                Jobbra(90);
+            }
+
+            void Szinez4()
+            {
+                Előre(meret * 39 / 100);
+                Balra(90);
+                Előre(meret * 30 / 100);
+                Tölt(szin4);
+                Hátra(meret * 30 / 100);
+                Jobbra(90);
+                Előre(meret * 39 / 100);
+                Jobbra(90);
+                Előre(meret * 10 / 100);
+                Balra(90);
+            }
+
+            Tollat(fel);
+            Jobbra(180);
+            Szinez3();
+            Szinez4();
+            #region atmegy
+            Jobbra(90);
+            Előre(meret * 167 / 100);
+            Jobbra(90);
+            #endregion
+            Szinez3();
+            Szinez4();
+            Tollat(le);
             #endregion
         }
     }
 }
-
