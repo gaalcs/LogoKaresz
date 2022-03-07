@@ -13,13 +13,13 @@ namespace LogoKaresz
         /* Függvények vége */
         void FELADAT()
         {
+            double meret = 300;
             /* Ezt indítja a START gomb! */
             // Teleport(közép.X, közép.Y+150, észak);
-            tolcser_virag_baloldali(100,Color.Red,Color.Blue);
+            tolcser_virag_baloldali(meret,Color.Red,Color.Blue,Color.Yellow);
 
+            
 
-            //Balra(90);
-            //Bezier(100,0,100,45,150,true,true);
         }
     }
 }
