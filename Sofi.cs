@@ -246,7 +246,7 @@ namespace LogoKaresz
         void tolcser_virag_jobboldali(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
         {
             #region a virag bal kulso szirma
-
+            Tollszín(szin_kulso);
             Jobbra((90 + 45));
             Bezier(meret * 4.5 / 10, 90, meret * 3.5 / 10, -75, meret);
             //vissza megy a kezdő pontba & megrajzolja a belso ivet is
@@ -258,54 +258,57 @@ namespace LogoKaresz
             Balra(90);
             Tollat(le);
 
-            Bezier(meret * 3.5 / 10, 90, meret * 4.25 / 10, -73, meret - meret / 10);
+            Bezier(meret * 3.5 / 10, 110, meret * 4.25 / 10, -73, meret - meret / 10);
             // vissza a kezdőpontba
             Tollat(fel);
-            Jobbra(15);
+            Balra(5);
             Előre(meret);
             Jobbra(5);
             Jobbra(70);
+            Tollat(le);
 
             #endregion
 
-            //!!! nem mukodik jol
-            #region bal kulso szirom
-            Jobbra(45);
-            Bezier(meret * 4.5 / 10, 0, meret * 3.5 / 10, -75, meret);
+
+            #region jobb kulso szirom
+            Bezier(meret * 4.5 / 10, 180, meret * -3.5 / 10, 75, meret);
+
             Tollat(fel);
             Balra(75);
-            Hátra(meret);
-            Balra(15);
+            Balra(30); Hátra(meret);
+            Jobbra(15);
             Előre(meret / 10);
             Tollat(le);
-            Jobbra(90);
-            Bezier(meret * 3.5 / 10, 20, meret * 4.25 / 10, -73, meret - meret / 10);
+
+            Balra(90);
+            Bezier(meret * 3.5 / 10, 160, meret * -4.25 / 10, 73, meret - meret / 10);
             // vissza a kezdőpontba
+            
             Tollat(fel);
-            Balra(95);
+            Balra(85);
             Hátra(meret);
-            Jobbra(15 * 2);
+            Jobbra(15);
 
             Tollat(le);
 
             #endregion
-
-
             Odatolt(0, meret / 10, szin_kulso);
 
             #region belso resz
 
             Tollszín(szin_belso);
             Tollat(fel);
-            Balra(45);
+
             Előre(meret / 7);
             Balra(90);
+            
             Tollat(le);
 
-            Bezier(meret * 2 / 10, 90, meret * -2.5 / 10, 80, meret - meret / 7);
+            Bezier(meret * 2 / 10, 180, meret * -2.5 / 10, 80, meret - meret / 7);
 
             //hatra
             Tollat(fel);
+            Balra(90);
             Balra(10);
             Hátra(meret - meret / 7);
             Jobbra(10);
@@ -313,16 +316,17 @@ namespace LogoKaresz
 
             //masik oldal
             Jobbra(90);
-            Bezier(meret * 2 / 10, 0, meret * 2.5 / 10, -80, meret - meret / 7);
 
-            Balra(180);
+            Bezier(meret * 2 / 10, -30, meret * -2.5 / 10, -80, meret - meret / 7);
+
+            Balra(135);
             Bezier(meret * 1.5 / 10, -45, 0, -35, (meret - meret / 8) / 5);
 
-            Jobbra(100);
+            Jobbra(70);
             Bezier(meret * 1.5 / 10, -90, 0, -22, (meret - meret / 10) / 5);
             #endregion
 
-            Odatolt(-80, meret / 3, szin_belso);
+           Odatolt(-80, meret / 3, szin_belso);
             Tollat(fel);
             Hátra(meret / 5);
             Tollat(le);
