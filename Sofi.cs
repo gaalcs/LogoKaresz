@@ -160,28 +160,30 @@ namespace LogoKaresz
         {
             #region a virag bal kulso szirma
             Tollszín(szin_kulso);
-            Balra((90 + 45)*meret);
-            Bezier(90*meret, 90*meret, -70*meret, 75*meret, 200*meret);
+            Balra((90 + 45));
+            Bezier(meret*4.5/10, 90, meret *- 3.5/10, 75,meret);
             //vissza megy a kezdő pontba & megrajzolja a belso ivet is
             Tollat(fel);
-            Balra(15*meret);
-            Hátra(200*meret);
-            Jobbra(15*meret);
-            Előre(20*meret);
-            Jobbra(45*meret); 
+            Balra(15);
+            Hátra(meret);
+            Jobbra(15);
+            Előre(meret/10);
+            Jobbra(45); 
             Tollat(le);
-            Balra((90 + 45)*meret);
-            Bezier(70*meret, 70*meret, -85*meret, 73*meret, 180*meret);
+            Balra((90 + 45));
+            Bezier(meret*3.5/10, 70, meret*-4.25/10, 73, meret-meret/10);
             // vissza a kezdőpontba
             Tollat(fel);
             Jobbra(5);           
-            Hátra(200 * meret);
-            Jobbra(15 * meret);
-            Jobbra(45 * meret);
+            Hátra(meret);
+            Jobbra(15);
+            Jobbra(45);
             Tollat(le);
-            
+
             #endregion
 
-        }
+           
+        } 
+        
     }
 }

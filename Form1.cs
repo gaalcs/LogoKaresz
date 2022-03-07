@@ -15,7 +15,7 @@ namespace LogoKaresz
         {
             /* Ezt indítja a START gomb! */
             // Teleport(közép.X, közép.Y+150, észak);
-            tolcser_virag_baloldali(1,Color.Red,Color.Blue);
+            tolcser_virag_baloldali(100,Color.Red,Color.Blue);
 
 
             //Balra(90);
