@@ -16,33 +16,38 @@ namespace LogoKaresz
 			Szele_korbe(31, 14, 14, Color.DarkOrange, Color.Black, Color.White);
 			/**/
 
+			/*/* /
 			Tollat(fel);
 			Előre(60);
 			Tollat(le);
 			Mak(60, Color.Green, Color.BurlyWood, Color.White, Color.Black);
 
 			Mak_alja(60, Color.White);
+
+			/**/
+
+			Mak_teteje(60, Color.Green, Color.White);
+
 			/** /
 			Tollat(fel);
-			Előre(50);
-			Jobbra(90);
+			Előre(100);
 			Tollat(le);
-
-			Előre(110);
 			Jobbra(90);
-			Előre(140);
+			Előre(230);
 			Jobbra(90);
-			Előre(170);
+			Előre(390);
 			Jobbra(90);
-			Előre(140);
+			Előre(380);
 			Jobbra(90);
-			Előre(60);
+			Előre(390);
+			Jobbra(90);
+			Előre(150);
 
 			Tollat(fel);
 			Jobbra(90);
-			Előre(20);
+			Előre(10);
 			Tölt(Color.Black);
-			Hátra(20);
+			Hátra(10);
 			Balra(90);
 			Tollat(le);
 			/**/

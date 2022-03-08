@@ -1158,6 +1158,7 @@ namespace LogoKaresz
             #endregion
         }
 
+        //!!!!!!!!!!!!!!VONAL-SZíN!!!!!!!!!!!!!!!!!
         void Mak_alja(double meret, Color szin)
         {
             #region helyezkedes
@@ -1196,7 +1197,7 @@ namespace LogoKaresz
             Tollat(le);
 
             Balra(90);
-            Bezier(40, 330, 30, 75, meret * 180/100);
+            Bezier(meret * 40/60, 330, meret * 30/60, 75, meret * 180/100);
             Balra(240);
             Balra(55);
             Ív(20, meret * 120/100);
@@ -1204,7 +1205,7 @@ namespace LogoKaresz
             Ív(20, meret * 120/100);
             Balra(55);
             Balra(60);
-            Bezier(30, 0, 40, 75, meret * 180/100);
+            Bezier(meret * 30/60, 0, meret * 40/60, 75, meret * 180/100);
             #endregion
 
             #region szinez
@@ -1220,7 +1221,78 @@ namespace LogoKaresz
 
         void Mak_teteje(double meret, Color szin1, Color szin2)
         {
+            #region helyezkedes
+            Tollat(fel);
+            Előre(meret * 385/100);
+            Jobbra(90);
+            Előre(meret * 120/100);
+            Tollat(le);
+            #endregion
 
+            #region mak teteje
+            #region mak tetejenek korvonala
+            Előre(meret * 168/100);
+            Balra(90);
+            Bezier(meret * 35/60, 135, meret * 28/60, 50, meret * 120/100);
+            Balra(135);
+            Bezier(meret * 34/60, 200, meret * 34/60, -80, meret * 135/100);
+            Jobbra(70);
+
+            Tollat(fel);
+            Előre(meret * 86/100);
+            Tollat(le);
+
+            Jobbra(90);
+            Előre(meret * 30/100);
+            Jobbra(90);
+            Ív(60, meret * 50/100);
+            Balra(120);
+            Ív(60, meret * 50/100);
+            Jobbra(90);
+            Előre(meret * 30/100);
+
+            Tollat(fel);
+            Jobbra(90);
+            Előre(meret * 87/100);
+            Tollat(le);
+
+            Jobbra(70);
+            Bezier(meret * 34/60, 180, meret * 34/60, -80, meret * 135/100);
+            Balra(115);
+            Bezier(meret * 28/60, 180, meret * 35/60, 85, meret * 120/100);
+            Jobbra(135);
+            #endregion
+
+            #region mak tetejenek belseje
+            Tollat(fel);
+            Jobbra(45);
+            Előre(meret * 30/100);
+            Balra(45);
+            Tollat(le);
+
+            Bezier(meret * 10/60, -90, meret * 30/60, -35, meret * 100/100);
+            Jobbra(150);
+            Bezier(meret * 45/60, 180, meret * 10/60, 78, meret * 105/100);
+            Balra(60);
+            Ív(170, meret * 7/100);
+
+            Tollat(fel);
+            Jobbra(80);
+            Előre(meret * 42.5/100);
+            Tollat(le);
+            
+            Balra(70);
+            Bezier(meret * 2/60, -45, meret * 16/60, -5, meret * 74/100);
+            Jobbra(160);
+            Ív(40, meret * 65/100);
+            Balra(130);
+            Ív(40, meret * 65/100);
+            Jobbra(160);
+            Bezier(meret * 16/60, 180, meret * 2/60, -39, meret * 74/100);
+            #endregion
+
+
+            #endregion
         }
 
         #endregion
