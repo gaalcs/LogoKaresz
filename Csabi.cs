@@ -665,7 +665,7 @@ namespace LogoKaresz
         }
         #endregion
 
-        #region Szivecske
+        #region Mak
         void Szivecske_fel(double meret, Color szin)
         {
             #region teteje
@@ -723,7 +723,6 @@ namespace LogoKaresz
             Tollszín(Color.Black);
             #endregion
         }
-        #endregion
 
         void Csontalak(double meret, Color szin)
         {
@@ -1158,5 +1157,72 @@ namespace LogoKaresz
             Tollat(le);
             #endregion
         }
+
+        void Mak_alja(double meret, Color szin)
+        {
+            #region helyezkedes
+            Tollat(fel);
+            Előre(meret * 87/100);
+            Balra(90);
+            Előre(meret * 7 / 100);
+            Jobbra(90);
+
+            Előre(meret * 20 / 100);
+            Jobbra(90);
+            Előre(meret * 7 / 100);
+            Tollat(le);
+            #endregion
+
+            #region mak alja
+            Előre(meret * 168/100);
+            Balra(60);
+            Ív(105, meret * 75/100);
+            
+            Tollat(fel);
+            Balra(45);
+            Hátra(meret * 404/100);
+            Tollat(le);
+
+            Balra(45);
+            Ív(105, meret * 75 / 100);
+
+            Tollat(fel);
+            Balra(60);
+            Előre(meret * 168/100);
+            Balra(60);
+            Ív(105, meret * 75/100);
+            Balra(45);
+            Hátra(meret * 404/100);
+            Tollat(le);
+
+            Balra(90);
+            Bezier(40, 330, 30, 75, meret * 180/100);
+            Balra(240);
+            Balra(55);
+            Ív(20, meret * 120/100);
+            Jobbra(70);
+            Ív(20, meret * 120/100);
+            Balra(55);
+            Balra(60);
+            Bezier(30, 0, 40, 75, meret * 180/100);
+            #endregion
+
+            #region szinez
+            Tollat(fel);
+            Balra(120);
+            Előre(meret * 2);
+            Tölt(szin);
+            Hátra(meret * 2);
+            Balra(90);
+            Tollat(le);
+            #endregion
+        }
+
+        void Mak_teteje(double meret, Color szin1, Color szin2)
+        {
+
+        }
+
+        #endregion
     }
 }
