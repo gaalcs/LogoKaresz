@@ -428,7 +428,7 @@ namespace LogoKaresz
             Odatolt(-80, meret / 3, szin_belso);
         }
 
-        void tolcser_viragok(double meret, Color szin_kulso, Color szin_belso, Color kor_szin) //!!!
+        void tolcser_viragok(double meret, Color szin_kulso, Color szin_belso, Color kor_szin) 
         {
             tolcser_virag_kozepre(meret, szin_kulso, szin_belso, kor_szin);
             Tollszín(Color.Black);
@@ -474,5 +474,89 @@ namespace LogoKaresz
 
         }
 
+        void tolcser_es_kicsi_viragok(double meret, Color szin_kulso, Color szin_belso, Color kor_szin) {
+
+            tolcser_viragok(meret, szin_kulso, szin_belso, kor_szin);
+
+            #region bal oldali kicsi virgok
+            Tollat(fel);
+            Balra(90);
+            Előre(meret / 3);
+            Jobbra(90);
+            Előre(meret / 6);
+
+            Balra(45);
+            Előre(meret * 0.50);
+
+            Balra(90);
+            Előre(meret / 3);
+            Tollat(le);
+
+            virag_kicsi(meret / 15, szin_kulso, szin_belso);
+
+            Tollat(fel);
+            Hátra((meret / 3) * 2);
+            Jobbra(180);
+            Tollat(le);
+
+            virag_kicsi(meret / 15, szin_kulso, szin_belso);
+
+            Tollat(fel);
+
+            Hátra((meret / 3));
+            Balra(90);
+            Hátra(meret * 0.50);
+
+            Jobbra(45);
+
+            Hátra(meret / 6);
+            Balra(90);
+            Hátra(meret / 3);
+            Jobbra(90);
+
+            Tollat(le);
+            #endregion
+
+            #region jobb oldali kicsi virgok
+            Tollat(fel);
+            Jobbra(90);
+            Előre(meret / 3);
+            Balra(90);
+            Előre(meret / 6);
+
+            Jobbra(45);
+            Előre(meret * 0.50);
+
+            Jobbra(90); 
+            Előre(meret / 3);
+            Tollat(le);
+
+            virag_kicsi(meret / 15, szin_kulso, szin_belso);
+
+            Tollat(fel);
+            Hátra((meret / 3) * 2);
+            Jobbra(180);
+            Tollat(le);
+
+            virag_kicsi(meret / 15, szin_kulso, szin_belso);
+
+            Tollat(fel);
+
+            Hátra((meret / 3));
+            Jobbra(90);
+            Hátra(meret * 0.50);
+
+            Balra(45);
+
+            Hátra(meret / 6);
+            Balra(-90);
+            Hátra(meret / 3);
+            Balra(90);
+
+            Tollat(le);
+            #endregion
+
+
+        }
     }
 }
