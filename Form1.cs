@@ -14,19 +14,11 @@ namespace LogoKaresz
         void FELADAT()
         {
             double meret = 100;
-
-
             /* Ezt indítja a START gomb! */
             // Teleport(közép.X, közép.Y+150, észak);
-            //tolcser_virag_baloldali(meret, Color.Red, Color.Blue, Color.Yellow);
-            //tolcser_virag_jobboldali(meret, Color.Red, Color.Yellow, Color.Green);
-            // tolcser_virag_kozepre(meret, Color.Red, Color.Yellow, Color.Green);
-
-
-            //tolcser_viragok(meret, Color.Red, Color.Yellow, Color.Green);
-
-             tolcser_es_kicsi_viragok(meret, Color.Red, Color.Yellow, Color.Green);
+            //tolcser_es_kicsi_viragok(meret, Color.Red, Color.Yellow, Color.Green);
            
+
         }
     }
 }

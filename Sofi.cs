@@ -240,7 +240,7 @@ namespace LogoKaresz
             Hátra(meret / 5);
             Tollat(le);
 
-            kor(meret*0.05, kor_szin);
+            kor(meret * 0.05, kor_szin);
 
         }
         void tolcser_virag_jobboldali(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
@@ -272,7 +272,7 @@ namespace LogoKaresz
 
             #region jobb kulso szirom
 
-            Hátra(meret/50); 
+            Hátra(meret / 50);
             Bezier(meret * 4.5 / 10, 180, meret * -3.5 / 10, 75, meret);
 
             Tollat(fel);
@@ -336,7 +336,7 @@ namespace LogoKaresz
             Hátra(meret / 5);
             Tollat(le);
 
-            kor(meret*0.05, kor_szin);
+            kor(meret * 0.05, kor_szin);
 
         }
         void tolcser_virag_kozepre(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
@@ -392,7 +392,7 @@ namespace LogoKaresz
             Tollat(le);
             #endregion
 
-            Odatolt(0, meret / 15, szin_kulso); 
+            Odatolt(0, meret / 15, szin_kulso);
             #region belso resz
 
             Tollszín(szin_belso);
@@ -428,7 +428,7 @@ namespace LogoKaresz
             Odatolt(-80, meret / 3, szin_belso);
         }
 
-        void tolcser_viragok(double meret, Color szin_kulso, Color szin_belso, Color kor_szin) 
+        void tolcser_viragok(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
         {
             tolcser_virag_kozepre(meret, szin_kulso, szin_belso, kor_szin);
             Tollszín(Color.Black);
@@ -527,7 +527,7 @@ namespace LogoKaresz
             Jobbra(45);
             Előre(meret * 0.50);
 
-            Jobbra(90); 
+            Jobbra(90);
             Előre(meret / 3);
             Tollat(le);
 
@@ -559,4 +559,6 @@ namespace LogoKaresz
 
         }
     }
+
+    
 }
