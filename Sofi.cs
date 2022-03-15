@@ -62,10 +62,10 @@ namespace LogoKaresz
             kor(meret * 0.60, szin_kozep);
 
             Tollszín(szin_kozep);
+            Odatolt(45, meret / 2, szin_kozep);
             Jobbra(90);
             Előre(meret * 0.60);
             Balra(90);
-            Odatolt(0, meret / 2, szin_kozep);
         }
 
         void virag_nagy(double meret, Color szin_szirom, Color szin_kozep, Color szin_background)
