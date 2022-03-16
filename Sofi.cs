@@ -585,7 +585,7 @@ namespace LogoKaresz
             Hátra(meret * 1.45);
             Jobbra(50);
 
-            Odatolt(180, meret * 0.10, szin);
+            Odatolt(-135, meret * 0.5, szin);
             Balra(45);
             
             Tollszín(Color.Black);
@@ -593,6 +593,7 @@ namespace LogoKaresz
 
         void elso_jobboldali_level(double meret, Color szin)
         {
+            Tollszín(szin);
             Jobbra(-45);
 
             Bezier_3_pontos(new Pont(meret * -0.20, meret * -2.70), new Pont(meret * 2.50, -meret * 2.2), new Pont(meret * 2.2, -meret * 0.50));
@@ -615,10 +616,28 @@ namespace LogoKaresz
             Hátra(meret * 1.45);
             Jobbra(-50);
 
-            Odatolt(180, meret * 0.10, szin);
+            Odatolt(135, meret * 0.50, szin);
             Balra(-45);
 
             Tollszín(Color.Black);
+        }
+        void baloldali_levelek(double meret, Color szin) //20as méret a megfelelő
+        {
+            elso_baloldali_level(meret*1.25, szin);
+            using (new Rajzol(false)) { Hátra(meret * 2.5); }
+            masodik_harmadik_baloldali_level(meret, szin);
+            Balra(15);
+            using (new Rajzol(false)) { Hátra(meret * 2); }
+            masodik_harmadik_baloldali_level(meret * 0.75, szin);
+        }
+        void jobboldali_levelek(double meret, Color szin)
+        {
+            elso_jobboldali_level(meret * 1.25, szin);
+            using (new Rajzol(false)) { Hátra(meret * 2.5); }
+            masodik_harmadik_jobboldali_level(meret, szin);
+            Jobbra(15);
+            using (new Rajzol(false)) { Hátra(meret * 2); }
+            masodik_harmadik_jobboldali_level(meret * 0.75, szin);
         }
     }
 
