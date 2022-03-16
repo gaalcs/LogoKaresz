@@ -13,14 +13,14 @@ namespace LogoKaresz
 {
 	public class Avatar
 	{
-		
+
 		private Pont hely;
 		private double irány;
 		double fokpoz(double i) => i < 0 ? i + 360 : i;
-		double fokelőjeles(double i) => i > 180 ? i-360 : i;
+		double fokelőjeles(double i) => i > 180 ? i - 360 : i;
 		public double Irány { get => fokpoz(irány - 90); set => irány = value + 90; }
 		public double Előjeles_Irány { get => fokelőjeles(Irány); set => Irány = value; }
-		public double Matekos_Irány { get => fokpoz(180-irány); set => irány = 180-value; }
+		public double Matekos_Irány { get => fokpoz(180 - irány); set => irány = 180 - value; }
 		public double Matekos_Előjeles_Irány { get => fokelőjeles(Matekos_Irány); set => Matekos_Irány = value; }
 		Form1 szülőform;
 		private PictureBox avatarpb;
@@ -32,9 +32,9 @@ namespace LogoKaresz
 		public int varakozas;
 		private bool állandó_frissítés;
 		public bool Állandó_frissítés
-		{ 
+		{
 			get => állandó_frissítés;
-			set 
+			set
 			{
 				állandó_frissítés = value;
 				Frissít();
@@ -108,9 +108,7 @@ namespace LogoKaresz
 			if (hollesz.DescartesBenneVan(szülőform.rajzlap))
 			{
 				if (rajzole)
-				{
 					gr.DrawLine(toll, hely.ToPoint(), hollesz.ToPoint());
-				}
 				hely = hollesz;
 				Thread.Sleep(varakozas);
 				Frissít();
@@ -227,12 +225,12 @@ namespace LogoKaresz
 				MessageBox.Show("Jaj... Ez kifolyt a pályáról...");
 			}
 
-}
-private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem jó sajnos, stack overflow :(
+		}
+		private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem jó sajnos, stack overflow :(
 		{
 			if (szülőform.rajzlap.GetPixel(x, y) == mit &&
 				0 <= x && x < szülőform.rajzlap.Width &&
-				0 <= y && y < szülőform.rajzlap.Height )
+				0 <= y && y < szülőform.rajzlap.Height)
 			{
 				szülőform.rajzlap.SetPixel(x, y, mire);
 				Rekurzív_kitöltés(x, y + 1, mit, mire);
@@ -278,26 +276,117 @@ private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem j�
 				Előre(a / 2);
 			}
 		}
-		public void Ív(float fok, double r)
+
+		void Kontrolpont(Pont p, Color szin, float w = 10, float h = 10)
 		{
-			/*
-				double x;
-				double y;
-				float d = 2 * (float)r;
-				float startangle;
-				float sweepangle;
-				gr.DrawArc(toll, x, y, d, d , startangle, sweepangle );
-			*/
-			throw new NotImplementedException();
+			gr.FillEllipse(new SolidBrush(szin), (float)p.X - w / 2, (float)p.Y - h / 2, w, h);
 		}
 
-		//		private void Bezier()
+		void Kontrolszakasz(Pont p, Pont q, Color szin)
+		{
+			gr.DrawLine(new Pen(szin), p.ToPoint(), q.ToPoint());
+		}
+
+
+		/// <summary>
+		/// Karesz egy másodrendű Bezier-görbét követve mozog.
+		/// A négy kontrolpont:
+		/// 1. Ahol Karesz van
+		/// 2. Polárkoordinátával: Amerre karesz néz + 1. paraméter
+		/// 3. A 4. kontrolpontból kivonva a 2-3. paraméterekkel megadott polárkoordinátás vektor.
+		/// 4. 4-5. paraméterek által megadott pont polárkoordinátás felírással.
+		/// </summary>
+		/// <param name="ilyen_erővel_indul"></param>
+		/// <param name="erre_néz_érkezéskor"></param>
+		/// <param name="ilyen_erővel_érkezik"></param>
+		/// <param name="az_érkezési_pont_jelenleg_ilyen_irányban_van"></param>
+		/// <param name="az_érkezési_pont_ilyen_messze_van"></param>
+		public void Bezier(double ilyen_erővel_indul,
+						double erre_néz_érkezéskor,
+						double ilyen_erővel_érkezik,
+						double az_érkezési_pont_jelenleg_ilyen_irányban_van,
+						double az_érkezési_pont_ilyen_messze_van,
+						bool kontrolpont = false,
+						bool kontrolszakasz = false
+						)
+		{
+			Pont hollesz = hely - new Pont(irány + az_érkezési_pont_jelenleg_ilyen_irányban_van, az_érkezési_pont_ilyen_messze_van, "polár");
+
+			if (hollesz.DescartesBenneVan(szülőform.rajzlap))
+			{
+				Pont cp1 = hely - new Pont(irány, ilyen_erővel_indul, "polár");
+				Pont cp2 = hollesz - new Pont(270 + erre_néz_érkezéskor, ilyen_erővel_érkezik, "polár");
+				if (rajzole)
+				{
+					gr.DrawBezier(toll, hely.ToPoint(), cp1.ToPoint(), cp2.ToPoint(), hollesz.ToPoint());
+				}
+				if (kontrolszakasz)
+				{
+					Kontrolszakasz(hely, cp1, Color.FromArgb(64, 0, 0, 255));
+					Kontrolszakasz(cp2, hollesz, Color.FromArgb(64, 0, 0, 255));
+				}
+				if (kontrolpont)
+				{
+					Kontrolpont(cp1, Color.LightGreen);
+					Kontrolpont(cp2, Color.Red);
+				}
+				hely = hollesz;
+				irány += erre_néz_érkezéskor;
+				Thread.Sleep(varakozas);
+				Frissít();
+			}
+			else
+				MessageBox.Show("Az érkezési pont a pályán kívül helyezkedne el!");
+		}
+
+		private Pont Vászon_koordinátarendszerébe(Pont cél) => hely - cél.Forgatása_az_origó_körül(Előjeles_Irány).Tükrözése_az_y_tengelyre();
+
+		public void Bezier_3_pontos(
+						(double, double) erre_indul,
+						(double, double) erről_érkezik,
+						(double, double) cél,
+						bool kontrolpont = false,
+						bool kontrolszakasz = false
+						) => Bezier_3_pontos(new Pont(erre_indul), new Pont(erről_érkezik), new Pont(cél), kontrolpont, kontrolszakasz);
+		public void Bezier_3_pontos(
+						Pont erre_indul, Pont erről_érkezik, Pont cél,
+						bool kontrolpont = false,
+						bool kontrolszakasz = false
+						)
+		{
+			Pont hollesz = Vászon_koordinátarendszerébe(cél);
+
+			if (hollesz.DescartesBenneVan(szülőform.rajzlap))
+			{
+				Pont cp1 = Vászon_koordinátarendszerébe(erre_indul);
+				Pont cp2 = Vászon_koordinátarendszerébe(erről_érkezik);
+				if (rajzole)
+				{
+					gr.DrawBezier(toll, hely.ToPoint(), cp1.ToPoint(), cp2.ToPoint(), hollesz.ToPoint());
+				}
+				if (kontrolszakasz)
+				{
+					Kontrolszakasz(hely, cp1, Color.FromArgb(64, 0, 0, 255));
+					Kontrolszakasz(cp2, hollesz, Color.FromArgb(64, 0, 0, 255));
+				}
+				if (kontrolpont)
+				{
+					Kontrolpont(cp1, Color.LightGreen);
+					Kontrolpont(cp2, Color.Red);
+				}
+				hely = hollesz;
+				Thread.Sleep(varakozas);
+				Frissít();
+			}
+			else
+				MessageBox.Show("Az érkezési pont a pályán kívül helyezkedne el!");
+		}
 
 		private void Frissít()
 		{
 			if (állandó_frissítés)
 			{
-				avatarpb.Image = rotateImage(Properties.Resources.Karesz0, (float)irány-90);
+				avatarpb.Image = rotateImage(Properties.Resources.Karesz0, (float)irány - 90);
 
 				szülőform.dlx.Text = hely.X.ToString();
 				szülőform.dly.Text = hely.Y.ToString();
@@ -308,7 +397,7 @@ private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem j�
 				/**/
 
 				/* most, hogy az avatarpb parentje a képkeret, nem kell offset */
-				avatarpb.Location = hely.ToPoint(new Point(0,0), w, h);
+				avatarpb.Location = hely.ToPoint(new Point(0, 0), w, h);
 				/**/
 
 				szülőform.képkeret.Image = szülőform.rajzlap; // innen töltődik be a legújabb változat
@@ -324,7 +413,7 @@ private void Rekurzív_kitöltés(int x, int y, Color mit, Color mire) // Nem j�
 			int maxside = (int)(Math.Sqrt(b.Width * b.Width + b.Height * b.Height));			
 			Bitmap returnBitmap = new Bitmap(maxside,maxside);
 			*/
-			Bitmap returnBitmap = new Bitmap(42,42); // azért feleslegesen ne szívassuk a felsővel. A fenti kód arra kell, ha valaki custom képpel akar rajzolni és lusta kiszámolni...
+			Bitmap returnBitmap = new Bitmap(42, 42); // azért feleslegesen ne szívassuk a felsővel. A fenti kód arra kell, ha valaki custom képpel akar rajzolni és lusta kiszámolni...
 			using (Graphics g = Graphics.FromImage(returnBitmap))
 			{
 				g.TranslateTransform((float)b.Width / 2, (float)b.Height / 2);

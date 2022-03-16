@@ -23,7 +23,7 @@ namespace LogoKaresz
         double Matekos_Előjeles_Irány { get => defaultkaresz.Matekos_Előjeles_Irány; }
         int Várakozás { get => defaultkaresz.varakozas; set => defaultkaresz.varakozas = value; }
         #endregion
-        
+
         #region Teleport
         bool teleportált_e_már = false;
         void Teleport(int x, int y, double ir = észak) => Teleport(new Point(x, y), ir);
@@ -56,12 +56,12 @@ namespace LogoKaresz
         static void Tollszín(Avatar a, int i) => a.Tollszín(i);
         static void Tollvastagság(Avatar a, float v) => a.Tollvastagság(v);
         static void Tölt(Avatar a, Color c, bool beszólós = true) => a.Tölt(c, beszólós);
-        static void Ív(Avatar a, (double , double ) fr) => a.Ív(fr.Item1, fr.Item2);
+        static void Ív(Avatar a, (double, double) fr) => a.Ív(fr.Item1, fr.Item2);
         static void Ív(Avatar a, double f, double r) => a.Ív(f, r);
         #endregion
 
         #region deOOP-függvények (formmetódusváltozatok)
-        
+
         bool Kilépek_e_a_pályáról(double d) => defaultkaresz.Kilépek_e_a_pályáról(d);
         void Előre(double d) => defaultkaresz.Előre(d);
         void Hátra(double d) => defaultkaresz.Hátra(d);
@@ -76,7 +76,38 @@ namespace LogoKaresz
         void Tollszín(int i) => defaultkaresz.Tollszín(i);
         void Tollvastagság(float v) => defaultkaresz.Tollvastagság(v);
         void Ív(double f, double r) => defaultkaresz.Ív(f, r);
-        void Ív((double, double)fr) => defaultkaresz.Ív(fr.Item1, fr.Item2);
+        void Ív((double, double) fr) => defaultkaresz.Ív(fr.Item1, fr.Item2);
+
+        /// <summary>
+		/// Karesz egy másodrendű Bezier-görbét követve mozog.
+		/// </summary>
+		/// <param name="ilyen_erővel_indul"></param>
+		/// <param name="erre_néz_érkezéskor"></param>
+		/// <param name="ilyen_erővel_érkezik"></param>
+		/// <param name="az_érkezési_pont_jelenleg_ilyen_irányban_van"></param>
+		/// <param name="az_érkezési_pont_ilyen_messze_van"></param>
+		public void Bezier(double ilyen_erővel_indul,
+                        double erre_néz_érkezéskor,
+                        double ilyen_erővel_érkezik,
+                        double az_érkezési_pont_jelenleg_ilyen_irányban_van,
+                        double az_érkezési_pont_ilyen_messze_van,
+                        bool kontrolpont = false,
+                        bool kontrolszakasz = false
+                        ) => defaultkaresz.Bezier(ilyen_erővel_indul, erre_néz_érkezéskor, ilyen_erővel_érkezik, az_érkezési_pont_jelenleg_ilyen_irányban_van, az_érkezési_pont_ilyen_messze_van, kontrolpont, kontrolszakasz);
+
+        public void Bezier_3_pontos(
+                        (double, double) erre_indul,
+                        (double, double) erről_érkezik,
+                        (double, double) cél,
+                        bool kontrolpont = false,
+                        bool kontrolszakasz = false
+                        ) => defaultkaresz.Bezier_3_pontos(erre_indul, erről_érkezik, cél, kontrolpont, kontrolszakasz);
+        public void Bezier_3_pontos(
+                        Pont erre_indul, Pont erről_érkezik, Pont cél,
+                        bool kontrolpont = false,
+                        bool kontrolszakasz = false
+                        ) => defaultkaresz.Bezier_3_pontos(erre_indul, erről_érkezik, cél, kontrolpont, kontrolszakasz);
+
         #endregion
 
         #region "vezérlési szerkezetek" delegáltakkal
@@ -175,7 +206,7 @@ namespace LogoKaresz
             Környezet<double, double> k;
             public Átmenetileg(Action<Avatar, double> eljárás, double előjeles_mérték) => k = new Környezet<double, double>(eljárás, előjeles_mérték, eljárás, -előjeles_mérték);
             public Átmenetileg(Avatar a, Action<Avatar, double> eljárás, double előjeles_mérték) => k = new Környezet<double, double>(a, eljárás, előjeles_mérték, eljárás, -előjeles_mérték);
-            public void Dispose() { k.Dispose();  GC.SuppressFinalize(this); }
+            public void Dispose() { k.Dispose(); GC.SuppressFinalize(this); }
         }
         /* Például
 
@@ -192,7 +223,7 @@ namespace LogoKaresz
             }
 
          */
-        public class Környezet<T,R> : IDisposable
+        public class Környezet<T, R> : IDisposable
         {
             Avatar a;
             Action<Avatar, R> post_a;
