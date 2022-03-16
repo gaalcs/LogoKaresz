@@ -339,7 +339,7 @@ namespace LogoKaresz
             kor(meret * 0.05, kor_szin);
 
         }
-        void tolcser_virag_kozepre(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
+        void tolcser_virag_kozepre(double meret, Color szin_kulso, Color szin_belso)
         {
             #region a virag bal kulso szirma
             Tollszín(szin_kulso);
@@ -430,7 +430,7 @@ namespace LogoKaresz
 
         void tolcser_viragok(double meret, Color szin_kulso, Color szin_belso, Color kor_szin)
         {
-            tolcser_virag_kozepre(meret, szin_kulso, szin_belso, kor_szin);
+            tolcser_virag_kozepre(meret, szin_kulso, szin_belso);
             Tollszín(Color.Black);
             Tollat(fel);
             Jobbra(90 + 27);
@@ -557,6 +557,68 @@ namespace LogoKaresz
             #endregion
 
 
+        }
+
+
+        void elso_baloldali_level(double meret, Color szin)
+        {
+            Tollszín(szin);
+            Jobbra(45);
+
+            Bezier_3_pontos(new Pont(meret * 0.20, meret * -2.70), new Pont(-meret * 2.50, -meret * 2.2), new Pont(-meret * 2.2, -meret * 0.50));
+            Bezier_3_pontos(new Pont(meret * 0.20, 0), new Pont(meret * 1.10, 0), new Pont(meret * 1.60, meret * 1.60));
+            Balra(28);
+            Hátra(meret * 1.25);
+            Balra(17);
+
+            Odatolt(-90, meret * 0.10, szin);
+            Tollszín(Color.Black);
+        }
+        void masodik_harmadik_baloldali_level(double meret, Color szin)
+        {
+            Tollszín(szin);
+            Jobbra(45);
+
+            Bezier_3_pontos(new Pont(meret * 1, meret * -3.10), new Pont(meret * -2.70, meret * -3.0), new Pont(meret * -2.10, meret * -1.0));
+            Bezier_3_pontos(new Pont(meret * 0.20, 0), new Pont(meret * 1.20, meret * 0.20), new Pont(meret * 1.0, meret * 1.90));
+            Balra(50);
+            Hátra(meret * 1.45);
+            Jobbra(50);
+
+            Odatolt(180, meret * 0.10, szin);
+            Balra(45);
+            
+            Tollszín(Color.Black);
+        }
+
+        void elso_jobboldali_level(double meret, Color szin)
+        {
+            Jobbra(-45);
+
+            Bezier_3_pontos(new Pont(meret * -0.20, meret * -2.70), new Pont(meret * 2.50, -meret * 2.2), new Pont(meret * 2.2, -meret * 0.50));
+            Bezier_3_pontos(new Pont(meret * -0.20, 0), new Pont(meret * -1.10, 0), new Pont(meret * -1.60, meret * 1.60));
+            Balra(-28);
+            Hátra(meret * 1.25);
+            Balra(-17);
+
+            Odatolt(90, meret * 0.10, szin);
+            Tollszín(Color.Black);
+        }
+        void masodik_harmadik_jobboldali_level(double meret, Color szin)
+        {
+            Tollszín(szin);
+            Jobbra(-45);
+
+            Bezier_3_pontos(new Pont(meret * -1, meret * -3.10), new Pont(meret * 2.70, meret * -3.0), new Pont(meret * 2.10, meret * -1.0));
+            Bezier_3_pontos(new Pont(meret * -0.20, 0), new Pont(meret * -1.20, meret * 0.20), new Pont(meret * -1.0, meret * 1.90));
+            Balra(-50);
+            Hátra(meret * 1.45);
+            Jobbra(-50);
+
+            Odatolt(180, meret * 0.10, szin);
+            Balra(-45);
+
+            Tollszín(Color.Black);
         }
     }
 

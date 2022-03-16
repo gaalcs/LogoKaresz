@@ -13,11 +13,13 @@ namespace LogoKaresz
         /* Függvények vége */
         void FELADAT()
         {
-            double meret = 100;
+            double meret = 20;
+            Color szin = Color.Black;
             /* Ezt indítja a START gomb! */
             // Teleport(közép.X, közép.Y+150, észak);
             //tolcser_es_kicsi_viragok(meret, Color.Red, Color.Yellow, Color.Green);
-           
+            
+
 
         }
     }
