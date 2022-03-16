@@ -34,7 +34,7 @@ namespace LogoKaresz
                 Balra(90);
                 #endregion
 
-                #region helyezkedes a korre
+                //helyezkedés a körre
                 Tollat(fel);
                 Balra(90);
                 Előre(meret * 6.5/10);
@@ -43,9 +43,8 @@ namespace LogoKaresz
                 Hátra(meret / 7.5);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region kor
+                //kör
                 Ív(360, meret / 7);
             
                 Tollat(fel);
@@ -55,9 +54,8 @@ namespace LogoKaresz
                 Hátra(meret / 15);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region helyetkedes az ivekre
+                //helyezkedés az ívekre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret / 7.5);
@@ -68,9 +66,8 @@ namespace LogoKaresz
                 Előre(meret * 8.68 / 10);
                 Jobbra(60);
                 Tollat(le);
-                #endregion
 
-                #region ivek
+                //ívek
                 Ív(60, meret);
                 Tollat(fel);
                 Balra(30);
@@ -109,15 +106,13 @@ namespace LogoKaresz
                 Előre(meret / 1.6);
                 Tollat(le);
                 #endregion
-                #endregion
 
-                #region helyezkedes a kovetkezore
+                //helyezkedés a következőre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret * 8.68 / 10);
                 Jobbra(90);
                 Tollat(le);
-                #endregion
             }
         }
 
@@ -190,7 +185,7 @@ namespace LogoKaresz
                 }
                 #endregion
 
-                #region helyezkedes a korre
+                //helyezkedés a körre
                 Tollat(fel);
                 Balra(90);
                 Előre(meret * 6.5/10);
@@ -199,9 +194,8 @@ namespace LogoKaresz
                 Hátra(meret / 7.5);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region kor
+                //kör
                 Ív(360, meret / 7);
 
                 Tollat(fel);
@@ -211,9 +205,8 @@ namespace LogoKaresz
                 Hátra(meret / 15);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region helyetkedes az ivekre
+                //helyezkedés az ívekre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret / 7.5);
@@ -224,9 +217,8 @@ namespace LogoKaresz
                 Előre(meret * 8.68/10);
                 Jobbra(60);
                 Tollat(le);
-                #endregion
 
-                #region ivek
+                //ívek
                 if (db == j+1)
                 {
                     Ív(60, meret);
@@ -296,9 +288,8 @@ namespace LogoKaresz
                 Előre(meret / 1.6);
                 Tollat(le);
                 #endregion
-                #endregion
 
-                #region helyezkedes a kovetkezore
+                //helyezkedés a következőre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret * 8.68/10);
@@ -309,7 +300,6 @@ namespace LogoKaresz
                 }
                 Balra(90);
                 Tollat(le);
-                #endregion
             }
         }
 
@@ -335,7 +325,7 @@ namespace LogoKaresz
                 Jobbra(90);
                 #endregion
 
-                #region helyezkedes a korre
+                //helyezkedés a körre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret * 6.5 / 10);
@@ -344,9 +334,8 @@ namespace LogoKaresz
                 Hátra(meret / 7.5);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region kor
+                //kör
                 Ív(360, meret / 7);
 
                 Tollat(fel);
@@ -356,9 +345,8 @@ namespace LogoKaresz
                 Hátra(meret / 15);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region helyetkedes az ivekre
+                //helyezkedés az ívekre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret / 7.5);
@@ -369,9 +357,8 @@ namespace LogoKaresz
                 Előre(meret * 8.68 / 10);
                 Jobbra(60);
                 Tollat(le);
-                #endregion
 
-                #region ivek
+                //ívek
                 Ív(60, meret);
                 Tollat(fel);
                 Balra(30);
@@ -412,15 +399,13 @@ namespace LogoKaresz
                 Előre(meret / 1.6);
                 Tollat(le);
                 #endregion
-                #endregion
 
-                #region helyezkedes a kovetkezore
+                //helyezkedés a következőre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret * 8.68 / 10);
                 Jobbra(180);
                 Tollat(le);
-                #endregion
             }
         }
 
@@ -493,7 +478,7 @@ namespace LogoKaresz
                 }
                 #endregion
 
-                #region helyezkedes a korre
+                //helyezkedés a körre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret * 6.5 / 10);
@@ -502,9 +487,8 @@ namespace LogoKaresz
                 Hátra(meret / 7.5);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region kor
+                //kör
                 Ív(360, meret / 7);
 
                 Tollat(fel);
@@ -514,9 +498,8 @@ namespace LogoKaresz
                 Hátra(meret / 15);
                 Balra(90);
                 Tollat(le);
-                #endregion
 
-                #region helyetkedes az ivekre
+                //helyezkedés az ívekre
                 Tollat(fel);
                 Jobbra(90);
                 Előre(meret / 7.5);
@@ -527,9 +510,8 @@ namespace LogoKaresz
                 Előre(meret * 8.68 / 10);
                 Jobbra(60);
                 Tollat(le);
-                #endregion
 
-                #region ivek
+                //ívek
                 if (db == j + 1)
                 {
                     Ív(60, meret);
@@ -610,9 +592,8 @@ namespace LogoKaresz
                 Előre(meret / 1.6);
                 Tollat(le);
                 #endregion
-                #endregion
 
-                #region helyezkedes a kovetkezore
+                //helyezkedés a következőre
                 Tollat(fel);
                 Balra(90);
                 Előre(meret * 1.32 / 10);
@@ -620,7 +601,6 @@ namespace LogoKaresz
                 Előre(meret);
                 Jobbra(90);
                 Tollat(le);
-                #endregion
             }
         }
 
@@ -628,9 +608,11 @@ namespace LogoKaresz
 
         void Szele_korbe(double meret, int db1, int db2, Color szin1, Color szin2, Color szin3)
         {
+            // |_ "alak"
             Szele_hor_bal(meret, (db1-2) / 2, szin1, szin2, szin3);
             Szele_vert_bal(meret, db2, szin1, szin2, szin3);
             
+            //helyezkedés 1
             Tollat(fel);
             Hátra(meret);
             Jobbra(90);
@@ -638,22 +620,31 @@ namespace LogoKaresz
             Balra(90);
             Tollat(le);
 
+            //  _
+            // |_ "alak"
             Szele_hor_bal(meret, (db1-2) / 2, szin1, szin2, szin3);
 
+            //helyezkedés 2
             Tollat(fel);
             Jobbra(90);
             Előre(meret * (db1 - 2) / 2);
             Balra(90);
             Tollat(le);
 
+            //  __
+            // |_  "alak"
             Szele_hor_jobb(meret, (db1 - 2) / 2, szin1, szin2, szin3);
 
+            //helyezkedés 3
             Tollat(fel);
             Hátra(meret * (db2-1));
             Tollat(le);
 
+            //  __
+            // |_ | "alak"
             Szele_vert_jobb(meret, db2, szin1, szin2, szin3);
 
+            //helyezkedés 4
             Tollat(fel);
             Hátra(meret * db2);
             Balra(90);
@@ -661,6 +652,8 @@ namespace LogoKaresz
             Jobbra(90);
             Tollat(le);
 
+            //  __
+            // |__| "alak"
             Szele_hor_jobb(meret, (db1-2) / 2, szin1, szin2, szin3);
         }
         #endregion
@@ -668,21 +661,19 @@ namespace LogoKaresz
         #region Mak
         void Szivecske_fel(double meret, Color szin)
         {
-            #region teteje
+            //teteje
             Tollszín(szin);
             Bezier(meret * 6/10, 150, meret * 6/10, 75, meret);
             Balra(120);
             Bezier(meret * 6/10, 180, meret * 6/10, 75, meret);
             Balra(20);
-            #endregion
 
-            #region alja
+            //alja
             Ív(40, meret * 2.83);
             Jobbra(80);
             Ív(40, meret * 2.83);
-            #endregion
 
-            #region szinez
+            //színezés
             Tollat(fel);
             Jobbra(100);
             Előre(meret);
@@ -691,12 +682,11 @@ namespace LogoKaresz
             Balra(90);
             Tollat(le);
             Tollszín(Color.Black);
-            #endregion
         }
 
         void Szivecske_le(double meret, Color szin)
         {
-            #region teteje
+            //teteje
             Jobbra(180);
             Tollszín(szin);
             Bezier(meret * 6 / 10, -30, meret * 6 / 10, 75, meret);
@@ -704,15 +694,13 @@ namespace LogoKaresz
             Bezier(meret * 6 / 10, 0, meret * 6 / 10, 75, meret);
             Balra(180);
             Balra(20);
-            #endregion
 
-            #region alja
+            //alja
             Ív(40, meret * 2.83);
             Jobbra(80);
             Ív(40, meret * 2.83);
-            #endregion
 
-            #region szinez
+            //színezés
             Tollat(fel);
             Jobbra(100);
             Előre(meret);
@@ -721,12 +709,11 @@ namespace LogoKaresz
             Balra(90);
             Tollat(le);
             Tollszín(Color.Black);
-            #endregion
         }
 
         void Csontalak(double meret, Color szin)
         {
-            #region csont
+            //csont
             Tollszín(szin);
             Jobbra(10);
             for (int k = 0; k < 2; k++)
@@ -748,9 +735,8 @@ namespace LogoKaresz
                 }
                 Jobbra(120);
             }
-            #endregion
 
-            #region szinez
+            //színezés
             Tollat(fel);
             Jobbra(30);
             Előre(meret / 4);
@@ -759,12 +745,11 @@ namespace LogoKaresz
             Balra(30);
             Tollat(le);
             Tollszín(Color.Black);
-            #endregion
         }
 
         void Lohere(double meret, Color szin)
         {
-            #region lohere            
+            //lóhere            
             int fok = 135;
             Tollszín(szin);
             for (int i = 1; i < 9; i++)
@@ -775,9 +760,8 @@ namespace LogoKaresz
                 fok += 45;
             }
             Tollszín(Color.Black);
-            #endregion
 
-            #region szinez
+            //színezés
             Tollat(fel);
             Jobbra(90);
             Előre(meret);
@@ -785,25 +769,22 @@ namespace LogoKaresz
             Hátra(meret);
             Balra(90);
             Tollat(le);
-            #endregion
         }
 
-        void Mak_kozepe(double meret, Color szin1, Color szin2, Color szin3)
+        void Mak_kozepe_minta(double meret, Color szin1, Color szin2, Color szin3)
         {
-            #region helyezkedes
+            //helyezkedés
             Tollat(fel);
             Előre(meret * 258.5/100);
             Jobbra(90);
             Előre(meret * 1.5/100);
             Balra(90);
             Tollat(le);
-            #endregion
 
-            #region szivecske_le
+            //szivecske le
             Szivecske_le(meret * 30/100, szin1);
-            #endregion
 
-            #region csontalak
+            //csontalak
             Tollat(fel);
             Előre(meret * 3/10);
             Balra(90);
@@ -811,9 +792,8 @@ namespace LogoKaresz
             Jobbra(90);
             Tollat(le);
             Csontalak(meret * 78.5/100, szin2);
-            #endregion
 
-            #region lohere
+            //lóhere
             Tollat(fel);
             Balra(10);
             Előre(meret * 5.2/10);
@@ -822,9 +802,8 @@ namespace LogoKaresz
             Jobbra(90);
             Tollat(le);
             Lohere(meret * 20/100, szin1);
-            #endregion
 
-            #region csontalak2
+            //csontalak2
             Tollat(fel);
             Jobbra(180);
             Előre(meret * 5.7/10);
@@ -833,9 +812,8 @@ namespace LogoKaresz
             Balra(90);
             Tollat(le);
             Csontalak(meret * 78.5/100, szin2);
-            #endregion
 
-            #region szivecske_fel
+            //szivecske fel
             Tollat(fel);
             Balra(10);
             Előre(meret * 6.15/10);
@@ -844,18 +822,16 @@ namespace LogoKaresz
             Jobbra(90);            
             Tollat(le);
             Szivecske_fel(meret * 30/100, szin1);
-            #endregion
 
-            #region helyezkedes2
+            //helyezkedés2
             Tollat(fel);
             Hátra(meret * 64/100);
             Jobbra(90);
             Előre(meret * 29/100);
             Balra(90);
             Tollat(le);
-            #endregion
 
-            #region vonal
+            //vonal
             int fok = 80;
             Balra(80);
             Tollszín(szin3);
@@ -866,22 +842,20 @@ namespace LogoKaresz
                 fok += 180;
             }
             Tollszín(Color.Black);
-            #endregion
         }
 
-        void Mak(double meret, Color szin1, Color szin2, Color szin3, Color szin4)
+        void Mak_kozepe(double meret, Color szin1, Color szin2, Color szin3, Color szin4)
         {
-            Mak_kozepe(meret, szin1, szin2, szin3);
+            Mak_kozepe_minta(meret, szin1, szin2, szin3);
 
             #region vonalak
-            #region helyezkedes
+            //helyezkedés
             Tollat(fel);
             Balra(190);
             Előre(meret * 50/100);
             Tollat(le);
-            #endregion
 
-            #region vonal2
+            //vonal2
             int fok = 60;
             Tollszín(szin3);
             for (int i = 0; i < 2; i++)
@@ -895,17 +869,15 @@ namespace LogoKaresz
                 fok += 180;
             }
             Tollszín(Color.Black);
-            #endregion
 
-            #region helyezkedes2
+            //helyezkedés2
             Tollat(fel);
             Balra(180);
             Előre(meret * 200/100);
             Tollat(le);
             Előre(meret * 40/100);
-            #endregion
 
-            #region volnal3
+            //volnal3
             int fok2 = 80;
             Tollszín(szin3);
             for (int i = 1; i < 3; i++)
@@ -925,7 +897,6 @@ namespace LogoKaresz
             }
             Tollszín(Color.Black);
             #endregion
-            #endregion
 
             #region szirmok
             void Szinez()
@@ -941,13 +912,13 @@ namespace LogoKaresz
 
             #region szirmok
             Tollszín(szin2);
-            Balra(61);
+            Balra(62);
             Bezier(meret * 40/100, 26, meret * 40/100, 90, meret * 69.5 / 100);
             Balra(26);
 
             Szinez();
 
-            Jobbra(30);
+            Jobbra(31);
             Bezier(meret * 45/100, 58, meret * 45/100, 90, meret * 69.5 / 100);
             Balra(60);
 
@@ -959,19 +930,18 @@ namespace LogoKaresz
 
             Szinez();
 
-            Jobbra(9);
+            Jobbra(8);
             Bezier(meret * 50/100, 98, meret * 50/100, 90, meret * 69.5 / 100);
             Balra(99);
-
+            
             Szinez();
 
-            Jobbra(20);
+            Jobbra(22);
             Bezier(meret * 45/100, 120, meret * 45/100, 90, meret * 69.5 / 100);
             Balra(120);
 
             Szinez();
-
-            Jobbra(32);
+            Jobbra(28);
             Bezier(meret * 40/100, 151, meret * 40/100, 90, meret * 69.5/100);
             Balra(149);
 
@@ -979,13 +949,12 @@ namespace LogoKaresz
             Tollszín(Color.Black);
             #endregion
 
-            #region helyezkedes3
+            //helyezkedés3
             Tollat(fel);
-            Jobbra(118);
+            Jobbra(121);
             Előre(meret * 180/100);
-            Előre(meret * 3/100);
+            Előre(meret * 7/100);
             Tollat(le);
-            #endregion
 
             #region szirmok2
             Tollszín(szin2);
@@ -995,13 +964,13 @@ namespace LogoKaresz
 
             Szinez();
 
-            Jobbra(33);
+            Jobbra(35);
             Bezier(meret * 45/100, 238, meret * 45/100, 90, meret * 69.5 / 100);
             Balra(241);
 
             Szinez();
 
-            Jobbra(23);
+            Jobbra(20);
             Bezier(meret * 50/100, 270, meret * 50/100, 90, meret * 69.5 / 100);
             Balra(259);
 
@@ -1019,7 +988,7 @@ namespace LogoKaresz
 
             Szinez();
 
-            Jobbra(29);
+            Jobbra(31);
             Bezier(meret * 40/100, 331, meret * 40/100, 90, meret * 69.5 / 100);
             Balra(330);
 
@@ -1060,10 +1029,10 @@ namespace LogoKaresz
 
             #region megy0
             Tollat(fel);
-            Balra(151);
+            Balra(152);
             Előre(meret * 87/100);
             Balra(90);
-            Előre(meret * 7/100);
+            Előre(meret * 9.5/100);
             Jobbra(90);
             Tollat(le);
             #endregion
@@ -1147,21 +1116,21 @@ namespace LogoKaresz
             Jobbra(180);
             Szinez3();
             Szinez4();
-            #region atmegy
+            
+            //átmegy
             Jobbra(90);
             Előre(meret * 167 / 100);
             Jobbra(90);
-            #endregion
+
             Szinez3();
             Szinez4();
             Tollat(le);
             #endregion
         }
 
-        //!!!!!!!!!!!!!!VONAL-SZíN!!!!!!!!!!!!!!!!!
         void Mak_alja(double meret, Color szin)
         {
-            #region helyezkedes
+            //helyezkedés
             Tollat(fel);
             Előre(meret * 87/100);
             Balra(90);
@@ -1170,11 +1139,11 @@ namespace LogoKaresz
 
             Előre(meret * 20 / 100);
             Jobbra(90);
-            Előre(meret * 7 / 100);
+            Előre(meret * 5 / 100);
             Tollat(le);
-            #endregion
 
             #region mak alja
+            Tollszín(szin);
             Előre(meret * 168/100);
             Balra(60);
             Ív(105, meret * 75/100);
@@ -1206,9 +1175,21 @@ namespace LogoKaresz
             Balra(55);
             Balra(60);
             Bezier(meret * 30/60, 0, meret * 40/60, 75, meret * 180/100);
+            Tollszín(Color.Black);
+            //színezés
+            if (szin != Color.White)
+            {
+                Tollat(fel);
+                Balra(90);
+                Előre(meret * 90/100);
+                Tölt(szin);
+                Hátra(meret * 90/100);
+                Jobbra(90);
+                Tollat(le);
+            }
             #endregion
 
-            #region szinez
+            //színezés
             Tollat(fel);
             Balra(120);
             Előre(meret * 2);
@@ -1216,21 +1197,21 @@ namespace LogoKaresz
             Hátra(meret * 2);
             Balra(90);
             Tollat(le);
-            #endregion
         }
 
         void Mak_teteje(double meret, Color szin1, Color szin2)
         {
-            #region helyezkedes
+            //helyezkedes
             Tollat(fel);
             Előre(meret * 385/100);
             Jobbra(90);
             Előre(meret * 120/100);
             Tollat(le);
-            #endregion
 
-            #region mak teteje
+            //mák teteje
             #region mak tetejenek korvonala
+            Tollszín(szin2);
+
             Előre(meret * 168/100);
             Balra(90);
             Bezier(meret * 35/60, 135, meret * 28/60, 50, meret * 120/100);
@@ -1261,26 +1242,41 @@ namespace LogoKaresz
             Balra(115);
             Bezier(meret * 28/60, 180, meret * 35/60, 85, meret * 120/100);
             Jobbra(135);
+
+            Tollszín(Color.Black);
             #endregion
 
             #region mak tetejenek belseje
+            Tollszín(szin1);
+            //helyezkedés 1
             Tollat(fel);
             Jobbra(45);
             Előre(meret * 30/100);
             Balra(45);
             Tollat(le);
 
+            //bal oldali valami
             Bezier(meret * 10/60, -90, meret * 30/60, -35, meret * 100/100);
             Jobbra(150);
             Bezier(meret * 45/60, 180, meret * 10/60, 78, meret * 105/100);
             Balra(60);
             Ív(170, meret * 7/100);
+            //színezés
+            Tollat(fel);
+            Jobbra(30);
+            Előre(meret * 20/100);
+            Tölt(szin1);
+            Hátra(meret * 20/100);
+            Balra(30);
+            Tollat(le);
 
+            //helyezkedes 2
             Tollat(fel);
             Jobbra(80);
             Előre(meret * 42.5/100);
             Tollat(le);
             
+            //középső valami teteje
             Balra(70);
             Bezier(meret * 2/60, -45, meret * 16/60, -5, meret * 74/100);
             Jobbra(160);
@@ -1289,12 +1285,71 @@ namespace LogoKaresz
             Ív(40, meret * 65/100);
             Jobbra(160);
             Bezier(meret * 16/60, 180, meret * 2/60, -39, meret * 74/100);
-            #endregion
+            //középső valami alja
+            Jobbra(140); 
+            Bezier(meret * 8/60, 315, meret * 8/60, 90, meret * 24/100);
+            Jobbra(85);
+            Bezier(meret * 8/60, 0, meret * 8/60, 40, meret * 24/100);
+            //színezés
+            Tollat(fel);
+            Jobbra(180);
+            Előre(meret * 40/100);
+            Tölt(szin1);
+            Hátra(meret * 40/100);
+            Balra(180);
+            Tollat(le);
 
+            //helyezkedés 3
+            Tollat(fel);
+            Jobbra(225);
+            Előre(meret * 48/100);
+            Jobbra(24);
+            Előre(meret * 29/100);
+            Balra(114);
+            Tollat(le);
 
+            //jobb oldali valami
+            Bezier(meret * 10 / 60, 120, meret * 45 / 60, 42, meret * 105 / 100);
+            Jobbra(150);
+            Bezier(meret * 30 / 60, 180, meret * 10 / 60, -55, meret * 100 / 100);
+            Jobbra(120);
+            Ív(170, meret * 7 / 100);
+            //színezés
+            Tollat(fel);
+            Előre(meret * 40/100);
+            Tölt(szin1);
+            Hátra(meret * 40/100);
+            Balra(20);
+            Tollat(le);
+
+            //szinezes(kívül)
+            if (szin2 != Color.White)
+            {
+                Tollat(fel);
+                Balra(90);
+                Előre(meret * 20/100);
+                Tölt(szin2);
+                Hátra(meret * 20/100);
+                Jobbra(90);
+                Tollat(le);
+            }
+
+            Tollszín(Color.Black);
             #endregion
         }
 
+        void Mak(double meret, Color szin1, Color szin2, Color szin3, Color szin4)
+        {
+            //helyezkedés
+            Tollat(fel);
+            Előre(60);
+            Tollat(le);
+
+            //mák
+            Mak_kozepe(meret, szin1, szin2, szin3, szin4);
+            Mak_alja(meret, szin3);
+            Mak_teteje(meret, szin1, szin3);
+        }
         #endregion
     }
 }
