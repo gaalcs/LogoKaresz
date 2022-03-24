@@ -7,7 +7,7 @@ namespace LogoKaresz
 {
 	public partial class Form1 : Form
 	{
-        #region Függvények
+        #region Alap függvények
         #region Zsófi
         #region Virágok
         void kor(double meret)
@@ -685,6 +685,7 @@ namespace LogoKaresz
                 Tollat(le);
 
                 //ívek
+                Tollszín(szin1);
                 Ív(60, meret);
                 Tollat(fel);
                 Balra(30);
@@ -710,6 +711,7 @@ namespace LogoKaresz
                 #endregion
 
                 Ív(90, meret * 8.68 / 10);
+                Tollszín(Color.Black);
 
                 #region a tobbi szinezese
                 Tollat(fel);
@@ -835,6 +837,7 @@ namespace LogoKaresz
                 Tollat(le);
 
                 //ívek
+                Tollszín(szin1);
                 if (db == j + 1)
                 {
                     Ív(60, meret);
@@ -888,6 +891,7 @@ namespace LogoKaresz
                 #endregion
 
                 Ív(90, meret * 8.68 / 10);
+                Tollszín(Color.Black);
 
                 #region a tobbi szinezese
                 Tollat(fel);
@@ -974,6 +978,7 @@ namespace LogoKaresz
                 Tollat(le);
 
                 //ívek
+                Tollszín(szin1);
                 Ív(60, meret);
                 Tollat(fel);
                 Balra(30);
@@ -1001,6 +1006,7 @@ namespace LogoKaresz
                 #endregion
 
                 Ív(90, meret * 8.68 / 10);
+                Tollszín(Color.Black);
 
                 #region a tobbi szinezese
                 Tollat(fel);
@@ -1126,6 +1132,7 @@ namespace LogoKaresz
                 Tollat(le);
 
                 //ívek
+                Tollszín(szin1);
                 if (db == j + 1)
                 {
                     Ív(60, meret);
@@ -1190,6 +1197,7 @@ namespace LogoKaresz
                 #endregion
 
                 Ív(90, meret * 8.68 / 10);
+                Tollszín(Color.Black);
 
                 #region a tobbi szinezese
                 Tollat(fel);
@@ -1385,11 +1393,10 @@ namespace LogoKaresz
             Tollat(fel);
             Előre(meret * 258.5 / 100);
             Jobbra(90);
-            Előre(meret * 1.5 / 100);
+            Előre(meret * 27.39 / 100);
             Balra(90);
             Tollat(le);
 
-            //szivecske le
             Szivecske_le(meret * 30 / 100, szin1);
 
             //csontalak
@@ -1948,12 +1955,6 @@ namespace LogoKaresz
 
         void Mak(double meret, Color szin1, Color szin2, Color szin3, Color szin4)
         {
-            //helyezkedés
-            Tollat(fel);
-            Előre(60);
-            Tollat(le);
-
-            //mák
             Mak_kozepe(meret, szin1, szin2, szin3, szin4);
             Mak_alja(meret, szin3);
             Mak_teteje(meret, szin1, szin3);
@@ -1962,10 +1963,46 @@ namespace LogoKaresz
         #endregion
         #endregion
 
+        #region Függvények
+        void Minta(double meret, int db1, int db2, Color szin1, Color szin2, Color szin3, Color szin4)
+        {
+            Tollat(fel);
+            Hátra(40);
+            Tollat(le);
+            Szele_korbe(meret * 31/100, db1, db2, szin1, szin2, szin3);
+
+            Tollat(fel);
+            Balra(90);
+            Előre((db1/2-1) * meret * 31/100);
+            Jobbra(90);
+
+            Előre(meret * 78/100);
+            Tollat(le);
+
+            Mak(meret * 30/100, szin4, szin1, szin3, szin2);
+
+            Tollat(fel);
+            Előre(meret * 51/100);
+            Balra(90);
+            Előre(meret * 15/100);
+            Jobbra(90);
+            Tollat(le);
+
+            tolcser_es_kicsi_viragok(meret * 145/100, szin3, szin1, szin3);
+
+            /**/
+            Tollat(fel);
+            Hátra(5);
+            Tölt(Color.Black);
+            Tollat(le);
+            /**/
+        }
+        #endregion
+
         void FELADAT()
 		{
-            
+            Minta(100, 14, 14, Color.DarkOrange, Color.Black, Color.White, Color.Green);
 
-		}
-	}
+        }
+    }
 }
