@@ -11,6 +11,7 @@ namespace LogoKaresz
 {
     partial class Form1
     {
+        //Az ívek nem narancssárgák!!!!, de a master-ben már igen.
         #region Szele
         void Szele_hor_bal(double meret, int db, Color szin1, Color szin2, Color szin3)
         {
