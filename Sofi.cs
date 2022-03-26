@@ -117,6 +117,7 @@ namespace LogoKaresz
             Előre(meret * 0.60);
             Balra(90);
             Odatolt(0, meret / 8, szin_kozep);
+            Tollszín(Color.Black);
         }
         /// <summary>
         /// a vaza feher szele, merettel szorzod az alap (300-as) meretet
@@ -587,7 +588,7 @@ namespace LogoKaresz
 
             Odatolt(-135, meret * 0.5, szin);
             Balra(45);
-            
+
             Tollszín(Color.Black);
         }
 
@@ -623,7 +624,8 @@ namespace LogoKaresz
         }
         void baloldali_levelek(double meret, Color szin) //20as méret a megfelelő
         {
-            elso_baloldali_level(meret*1.25, szin);
+            elso_baloldali_level(meret * 1.25, szin);
+            Balra(10);
             using (new Rajzol(false)) { Hátra(meret * 2.5); }
             masodik_harmadik_baloldali_level(meret, szin);
             Balra(15);
@@ -633,12 +635,88 @@ namespace LogoKaresz
         void jobboldali_levelek(double meret, Color szin)
         {
             elso_jobboldali_level(meret * 1.25, szin);
+            Jobbra(10);
             using (new Rajzol(false)) { Hátra(meret * 2.5); }
             masodik_harmadik_jobboldali_level(meret, szin);
             Jobbra(15);
             using (new Rajzol(false)) { Hátra(meret * 2); }
             masodik_harmadik_jobboldali_level(meret * 0.75, szin);
         }
+
+        void leveles_ag_bal(double meret,Color szin_alap, Color virag_szirom, Color background)
+        {
+            Tollszín(szin_alap);
+
+            Balra(45);
+
+            Bezier_3_pontos(new Pont(meret / 4, meret * 1.25), new Pont(meret * -1.42, meret * 1.11), new Pont(meret * -1.43, meret / 4));
+            Balra(180 - 15);
+            Bezier_3_pontos(new Pont(meret * 0.00, meret * 0.30), new Pont(meret * 0.17, meret * 0.51), new Pont(meret * 0.28, meret * 0.51));
+
+            using (new Rajzol(false))
+            {
+                Balra(110.5);
+                Előre(meret * 1.85);
+            }
+
+
+            //
+
+            using (new Rajzol(false))
+            {
+                Jobbra(27);
+                Hátra(meret * 0.72);
+            }
+            virag_nagy(meret * 0.38, virag_szirom,szin_alap ,background);
+            using (new Rajzol(false))
+            {
+                Hátra(meret * -0.72);
+                Jobbra(-27 - 38);
+            }
+            Tollszín(szin_alap);
+
+            Jobbra(50);
+            Előre(meret * 0.20);
+            Balra(50 + 45);
+
+
+            //
+
+
+
+            Bezier_3_pontos(new Pont(meret * 0.25, meret * 1.45), new Pont(meret * -1.62, meret * 1.41), new Pont(meret * -1.83, meret * 0.25));
+            Balra(180);
+
+            Bezier_3_pontos(new Pont(meret * 0.00, meret * 0.10), new Pont(meret * 0.17, meret * 0.31), new Pont(meret * 0.28, meret * 0.31));
+
+
+            Balra(25);
+            Előre(meret * 0.17);
+
+            Odatolt(-90, meret / 10, szin_alap);
+
+            Jobbra(98.5);
+
+            using (new Rajzol(false))
+            {
+
+                Előre(meret * 0.7);
+            }
+            virag_nagy(meret * 0.38,virag_szirom ,szin_alap , background);
+            using (new Rajzol(false))
+            {
+                Hátra(meret * 0.7);
+                //
+                Jobbra(180 - 50);
+                Előre(meret * 1.25);
+                Jobbra(25);
+            }
+
+            baloldali_levelek(meret * 0.15, szin_alap);
+
+
+        }
+
     }
 
     
