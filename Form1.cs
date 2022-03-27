@@ -18,7 +18,7 @@ namespace LogoKaresz
             /* Ezt indítja a START gomb! */
             // Teleport(közép.X, közép.Y+150, észak);
 
-            leveles_ag_bal(meret,Color.Orange,Color.Yellow,Color.White);
+            leveles_ag_jobb(meret,Color.Orange,Color.Yellow,Color.White);
 
         }
     }

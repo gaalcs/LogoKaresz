@@ -715,6 +715,78 @@ namespace LogoKaresz
             baloldali_levelek(meret * 0.15, szin_alap);
 
 
+        }void leveles_ag_jobb(double meret,Color szin_alap, Color virag_szirom, Color background)
+        {
+            Tollszín(szin_alap);
+
+            Jobbra(45);
+
+            Bezier_3_pontos(new Pont(-meret / 4, meret * 1.25), new Pont(meret * 1.42, meret * 1.11), new Pont(meret * 1.43, meret / 4));
+            Jobbra(180 - 15);
+            Bezier_3_pontos(new Pont(meret * 0.00, meret * 0.30), new Pont(meret * -0.17, meret * 0.51), new Pont(meret * -0.28, meret * 0.51));
+
+            using (new Rajzol(false))
+            {
+                Jobbra(110.5);
+                Előre(meret * 1.85);
+            }
+
+
+            //
+
+            using (new Rajzol(false))
+            {
+                Balra(27);
+                Hátra(meret * 0.72);
+            }
+            virag_nagy(meret * 0.38, virag_szirom,szin_alap ,background);
+            using (new Rajzol(false))
+            {
+                Hátra(meret * -0.72);
+                Balra(-27 - 38);
+            }
+            Tollszín(szin_alap);
+
+            Balra(50);
+            Előre(meret * 0.20);
+            Jobbra(50 + 45);
+
+
+            //
+
+
+
+            Bezier_3_pontos(new Pont(meret * -0.25, meret * 1.45), new Pont(meret * 1.62, meret * 1.41), new Pont(meret * 1.83, meret * 0.25));
+            Balra(180);
+
+            Bezier_3_pontos(new Pont(meret * 0.00, meret * 0.10), new Pont(meret * -0.17, meret * 0.31), new Pont(meret * -0.28, meret * 0.31));
+
+
+            Jobbra(25);
+            Előre(meret * 0.17);
+
+            Odatolt(90, meret / 10, szin_alap);
+
+            Balra(98.5);
+
+            using (new Rajzol(false))
+            {
+
+                Előre(meret * 0.7);
+            }
+            virag_nagy(meret * 0.38,virag_szirom ,szin_alap , background);
+            using (new Rajzol(false))
+            {
+                Hátra(meret * 0.7);
+                //
+                Balra(180 - 50);
+                Előre(meret * 1.25);
+                Balra(25);
+            }
+
+            jobboldali_levelek(meret * 0.15, szin_alap);
+
+
         }
 
     }
