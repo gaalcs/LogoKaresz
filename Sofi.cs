@@ -659,7 +659,6 @@ namespace LogoKaresz
                 Előre(meret * 1.85);
             }
 
-
             //
 
             using (new Rajzol(false))
@@ -667,7 +666,9 @@ namespace LogoKaresz
                 Jobbra(27);
                 Hátra(meret * 0.72);
             }
+
             virag_nagy(meret * 0.38, virag_szirom,szin_alap ,background);
+
             using (new Rajzol(false))
             {
                 Hátra(meret * -0.72);
@@ -679,16 +680,12 @@ namespace LogoKaresz
             Előre(meret * 0.20);
             Balra(50 + 45);
 
-
             //
-
-
 
             Bezier_3_pontos(new Pont(meret * 0.25, meret * 1.45), new Pont(meret * -1.62, meret * 1.41), new Pont(meret * -1.83, meret * 0.25));
             Balra(180);
 
             Bezier_3_pontos(new Pont(meret * 0.00, meret * 0.10), new Pont(meret * 0.17, meret * 0.31), new Pont(meret * 0.28, meret * 0.31));
-
 
             Balra(25);
             Előre(meret * 0.17);
@@ -702,7 +699,9 @@ namespace LogoKaresz
 
                 Előre(meret * 0.7);
             }
+
             virag_nagy(meret * 0.38,virag_szirom ,szin_alap , background);
+
             using (new Rajzol(false))
             {
                 Hátra(meret * 0.7);
@@ -713,9 +712,8 @@ namespace LogoKaresz
             }
 
             baloldali_levelek(meret * 0.15, szin_alap);
-
-
-        }void leveles_ag_jobb(double meret,Color szin_alap, Color virag_szirom, Color background)
+        }
+        void leveles_ag_jobb(double meret,Color szin_alap, Color virag_szirom, Color background)
         {
             Tollszín(szin_alap);
 
@@ -731,7 +729,6 @@ namespace LogoKaresz
                 Előre(meret * 1.85);
             }
 
-
             //
 
             using (new Rajzol(false))
@@ -739,7 +736,9 @@ namespace LogoKaresz
                 Balra(27);
                 Hátra(meret * 0.72);
             }
+
             virag_nagy(meret * 0.38, virag_szirom,szin_alap ,background);
+
             using (new Rajzol(false))
             {
                 Hátra(meret * -0.72);
@@ -751,16 +750,12 @@ namespace LogoKaresz
             Előre(meret * 0.20);
             Jobbra(50 + 45);
 
-
             //
-
-
 
             Bezier_3_pontos(new Pont(meret * -0.25, meret * 1.45), new Pont(meret * 1.62, meret * 1.41), new Pont(meret * 1.83, meret * 0.25));
             Balra(180);
 
             Bezier_3_pontos(new Pont(meret * 0.00, meret * 0.10), new Pont(meret * -0.17, meret * 0.31), new Pont(meret * -0.28, meret * 0.31));
-
 
             Jobbra(25);
             Előre(meret * 0.17);
@@ -774,7 +769,9 @@ namespace LogoKaresz
 
                 Előre(meret * 0.7);
             }
+
             virag_nagy(meret * 0.38,virag_szirom ,szin_alap , background);
+
             using (new Rajzol(false))
             {
                 Hátra(meret * 0.7);
@@ -785,8 +782,6 @@ namespace LogoKaresz
             }
 
             jobboldali_levelek(meret * 0.15, szin_alap);
-
-
         }
 
     }
