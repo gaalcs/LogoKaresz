@@ -7,7 +7,7 @@ namespace LogoKaresz
 {
 	public partial class Form1 : Form
 	{
-        #region Alap függvények
+        #region Függvények
         #region Zsófi
         #region Virágok
         void kor(double meret)
@@ -1963,7 +1963,6 @@ namespace LogoKaresz
         #endregion
         #endregion
 
-        #region Függvények
         void Minta(double meret, int db1, int db2, Color szin1, Color szin2, Color szin3, Color szin4)
         {
             Tollat(fel);
@@ -1997,7 +1996,6 @@ namespace LogoKaresz
             Tollat(le);
             /**/
         }
-        #endregion
 
         void FELADAT()
 		{
