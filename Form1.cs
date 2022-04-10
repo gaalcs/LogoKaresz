@@ -2103,33 +2103,33 @@ namespace LogoKaresz
         #endregion
         #endregion
 
-        void Minta(double meret, int db1, int db2, Color szin1, Color szin2, Color szin3, Color szin4)
+        void Minta(Color szin1, Color szin2, Color szin3, Color szin4)
         {
             //Széle
             Tollat(fel);
             Hátra(40);
             Tollat(le);
-            Szele_korbe(meret * 31/100, db1, db2, szin1, szin2, szin3);
+            Szele_korbe(31, 14, 14, szin1, szin2, szin3);
             //
             Tollat(fel);
             Balra(90);
-            Előre((db1/2-1) * meret * 31/100);
+            Előre((14/2-1) * 31);
             Jobbra(90);
-            Előre(meret * 78/100);
+            Előre(78);
             Tollat(le);
 
             //Mák
-            Mak(meret * 30/100, szin4, szin1, szin3, szin2);
+            Mak(30, szin4, szin1, szin3, szin2);
             //
             Tollat(fel);
-            Előre(meret * 51/100);
+            Előre(51);
             Balra(90);
-            Előre(meret * 15/100);
+            Előre(15);
             Jobbra(90);
             Tollat(le);
 
             //Tölcsér virágos (A minta teteje)
-            tolcser_es_kicsi_viragok(meret * 145/100, szin3, szin1, szin3);
+            tolcser_es_kicsi_viragok(145, szin3, szin1, szin3);
             //
             Tollat(fel);
             Balra(90);
@@ -2161,7 +2161,7 @@ namespace LogoKaresz
 
         void FELADAT()
 		{
-            Minta(100, 14, 14, Color.DarkOrange, Color.Black, Color.White, Color.Green);
+            Minta(Color.DarkOrange, Color.Black, Color.White, Color.Green);
 
         }
     }
